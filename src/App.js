@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/header';
+import { Container } from 'react-bootstrap';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+      <Header />
+      <Container className="mt-4">
+        <h1 className="text-center text-success mb-4">
+          ¡Bienvenido a tu Huerto en Casa! 🌱
+        </h1>
+        <p className="text-center text-muted lead">
+          Gestiona tus plantas de manera fácil y efectiva con nuestra aplicación.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Hola Mundo
-        </a>
-      </header>
+      </Container>
     </div>
   );
 }
