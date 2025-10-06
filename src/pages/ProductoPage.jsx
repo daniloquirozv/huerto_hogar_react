@@ -6,8 +6,7 @@ import CardsComponent from '../components/CardsComponent'
 function ProductoPage() {
   return (
     <>
-        <HeaderComponent></HeaderComponent>
-        <div>Producto Page</div>
+        <HeaderComponent></HeaderComponent>        
         <CardsComponent></CardsComponent>
         <FooterComponent></FooterComponent>
     </>
