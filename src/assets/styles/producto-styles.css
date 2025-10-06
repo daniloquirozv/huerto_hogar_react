@@ -6,11 +6,11 @@
     --texto-principal: #333333;
     --texto-secundario: #666666;
 }
-/* body {
-    background-image: url('../Images/Productos/FondoHTML.png');
+body {
+    background-image: url('../images/Productos/FondoHTML.png');
     background-repeat: repeat;
     background-color: var(--bg-principal);
-} */
+}
 h1, h2, h3, h4, h5 {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
