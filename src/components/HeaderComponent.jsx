@@ -24,16 +24,17 @@ function HeaderComponent() {
     return (
         <Navbar expand="lg" className={` ${productoStyles.navbar} `}>
             <Container>
-                <Navbar.Brand href=""><img src={logotipo} alt="Logotipo" title='Huerto Hogar' width={100} /></Navbar.Brand>
+                <Navbar.Brand href="#home"><img src={logotipo} alt="Logotipo" title='Huerto Hogar' width={100} /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto ">                        
+                    <Nav className="me-auto navbar-nav">                        
                         <Nav.Link as={Link} to={'/producto'}>Inicio</Nav.Link>
                         <Nav.Link as={Link} to={'/producto'}>Productos</Nav.Link>
                         <Nav.Link as={Link} to={'/producto'}>Blog</Nav.Link>
                         <Nav.Link href='#Contacto' onClick={handleContactoClick}>Contacto</Nav.Link>
                         <Nav.Link as={Link} to={'/producto'}>Inicio Sesion</Nav.Link>
-                    </Nav>             
+                    </Nav>
+                                       
                 </Navbar.Collapse>
             </Container>
         </Navbar>        
