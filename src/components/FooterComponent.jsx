@@ -6,7 +6,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 
 function FooterComponent() {
   return (
-    <footer className="footer-eco">
+    <footer id='Contacto' className="footer-eco">
       <div className="container-fluid py-4">
         <div className="row gy-4 align-items-center">
 
@@ -41,7 +41,7 @@ function FooterComponent() {
             </div>
           </div>
 
-          <div id="contacto" className="col-lg-4 text-center">
+          <div className="col-lg-4 text-center">
             <h5 className="eco-title mb-3">Contáctanos</h5>
             <div className="footer-social mb-3">
               <a href="https://facebook.com/" title="Facebook" target="_blank" rel="noreferrer" className="social-link"><i
