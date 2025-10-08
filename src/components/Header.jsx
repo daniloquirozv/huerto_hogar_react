@@ -5,12 +5,11 @@ import CarritoMenu from "./CarritoMenu";
 import LoginModal from "./LoginModal";
 import BarraMenu from "./BarraMenu";
 
-export default function Header() {
+export default function Header({ carritoItems = [], onRemoveFromCart, onUpdateQuantity }) {
 
     const [showMenu, setShowMenu] = useState(false);
     const [showCart, setShowCart] = useState(false);
     const [showLogin, setShowLogin] = useState(false);
-    const cartItems = []; // Vacío para mostrar el mensaje, o con items
 
     return (
         <>
@@ -64,13 +63,19 @@ export default function Header() {
                                     fontSize: "0.8em",
                                 }}
                             >
-                                {cartItems.length}
+                                {carritoItems.length}
                             </span>
                         </Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
-            <CarritoMenu show={showCart} handleClose={() => setShowCart(false)} carritoItems={cartItems} />
+            <CarritoMenu 
+                show={showCart} 
+                handleClose={() => setShowCart(false)} 
+                carritoItems={carritoItems}
+                onRemoveFromCart={onRemoveFromCart}
+                onUpdateQuantity={onUpdateQuantity}
+            />
             <LoginModal show={showLogin} handleClose={() => setShowLogin(false)} />
             <BarraMenu show={showMenu} onHide={() => setShowMenu(false)} />
         </>
