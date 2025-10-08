@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import CarritoMenu from "./carritoMenu";
 import LoginModal from "./loginModal";
 import BarraMenu from "./barraMenu";
+import logotipo from '../../assets/images/principal/LogoTipo.png';
 
 export default function Header() {
 
@@ -33,7 +34,7 @@ export default function Header() {
                             <i className="bi bi-list"></i>
                         </Button>
                         <Navbar.Brand href="/">
-                            <img src="/LogoTipo.png" alt="LogoTipo" title="HuertoHogar" width={100} />
+                            <img src={logotipo} alt="LogoTipo" title="HuertoHogar" width={100} />
                         </Navbar.Brand>
                     </div>
                     {/* Menú principal siempre visible */}

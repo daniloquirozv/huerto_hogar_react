@@ -1,32 +1,20 @@
 import { Badge, Button, Card, Carousel, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import '../../assets/style.css'
+import '../../assets/principal-style.css'
+import fondo from '../../assets/images/principal/fondo3.avif';
+import logotipo from '../../assets/images/principal/LogoTipo.png';
+import { productosMasVendidos as productosData } from "../../data/productosMasVendidos";
+import Carrusel from "./carrusel";
 
-const productosMasVendidos = [
-    {
-        nombre: "Frutillas Orgánicas",
-        imagen: "/frutillas.jpg",
-        descripcion: "Dulces y frescas, favoritas de la temporada.",
-    },
-    {
-        nombre: "Lechuga Hidropónica",
-        imagen: "/lechuga.jpg",
-        descripcion: "Crujiente y lista para tu ensalada.",
-    },
-    {
-        nombre: "Tomate Cherry",
-        imagen: "/tomate.jpg",
-        descripcion: "Pequeños y sabrosos, perfectos para snacks.",
-    },
-];
 
 export default function Body() {
+
     return (
         <main>
             {/* Hero Section */}
             <section className="hero bg-light position-relative overflow-hidden" id="hero">
                 <div className="hero-background position-absolute w-100 h-100" style={{
-                    backgroundImage: 'url("/fondo3.avif")',
+                    backgroundImage: `url(${fondo})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundAttachment: 'fixed',
@@ -62,149 +50,95 @@ export default function Body() {
                 </Container>
             </section>
             {/* Catálogo Section */}
-            <section className="py-5 bg-white" id="catalogo">
-                <Container >
-                    <Row className="mb-5">
-                        <Col lg={8} className="mx-auto text-center">
-                            <h2 className="display-5 fw-bold text-success mb-3">Nuestro Catálogo</h2>
-                            <p className="lead text-muted">
-                                Productos Frescos y Alimentos Orgánicos
-                            </p>
-                        </Col>
-                    </Row>
-                    <Carousel interval={4000} indicators={true} controls={true}>
-                        {/* Frutas*/}
-                        <Carousel.Item>
-                            <Row className="justify-content-center">
-                                <Col lg={4} md={6}>
-                                    <Card className="h-100 shadow-sm border-0 product-card">
-                                        <Card.Img
-                                            variant="top"
-                                            src="/Catalogo-Fruta.jpg"
-                                            alt="Frutas Frescas"
-                                            style={{ height: '200px', objectFit: 'cover' }}
-                                        />
-                                        <Card.Body className="d-flex flex-column">
-                                            <Badge bg="success" className="align-self-start mb-2">
-                                                Frutas
-                                            </Badge>
-                                            <Card.Title className="h5 fw-bold">Frutas Frescas</Card.Title>
-                                            <Card.Text className="text-muted flex-grow-1">
-                                                Frutas frescas y jugosas, cultivadas localmente para garantizar la mejor calidad y sabor.
-                                            </Card.Text>
-                                        </Card.Body>
-                                    </Card>
-                                </Col>
-                            </Row>
-                        </Carousel.Item>
-                        {/* Verduras */}
-                        <Carousel.Item>
-                            <Row className="justify-content-center">
-                                <Col lg={4} md={6}>
-                                    <Card className="h-100 shadow-sm border-0 product-card">
-                                        <Card.Img
-                                            variant="top"
-                                            src="/Catalogo-Verdura.png"
-                                            alt="Verduras Orgánicas"
-                                            style={{ height: '200px', objectFit: 'cover' }}
-                                        />
-                                        <Card.Body className="d-flex flex-column">
-                                            <Badge bg="success" className="align-self-start mb-2">
-                                                Verduras
-                                            </Badge>
-                                            <Card.Title className="h5 fw-bold">Verduras Orgánicas</Card.Title>
-                                            <Card.Text className="text-muted flex-grow-1">
-                                                Verduras orgánicas, libres de pesticidas y cultivadas con prácticas sostenibles.
-                                            </Card.Text>
-                                        </Card.Body>
-                                    </Card>
-                                </Col>
-                            </Row>
-                        </Carousel.Item>
-                        {/* Productos Orgánicos */}
-                        <Carousel.Item>
-                            <Row className="justify-content-center">
-                                <Col lg={4} md={6}>
-                                    <Card className="h-100 shadow-sm border-0 product-card">
-                                        <Card.Img
-                                            variant="top"
-                                            src="/Catalogo-Organico.png"
-                                            alt="Productos Orgánicos"
-                                            style={{ height: '200px', objectFit: 'cover' }}
-                                        />
-                                        <Card.Body className="d-flex flex-column">
-                                            <Badge bg="success" className="align-self-start mb-2">
-                                                Orgánicos
-                                            </Badge>
-                                            <Card.Title className="h5 fw-bold">Productos Orgánicos</Card.Title>
-                                            <Card.Text className="text-muted flex-grow-1">
-                                                Una variedad de productos orgánicos, desde granos hasta snacks saludables, para un estilo de vida consciente.
-                                            </Card.Text>
-                                        </Card.Body>
-                                    </Card>
-                                </Col>
-                            </Row>
-                        </Carousel.Item>
-                        {/* Productos Lacteos */}
-                        <Carousel.Item>
-                            <Row className="justify-content-center">
-                                <Col lg={4} md={6}>
-                                    <Card className="h-100 shadow-sm border-0 product-card">
-                                        <Card.Img
-                                            variant="top"
-                                            src="/Catalogo-Lacteos.png"
-                                            alt="Productos Lácteos"
-                                            style={{ height: '200px', objectFit: 'cover' }}
-                                        />
-                                        <Card.Body className="d-flex flex-column">
-                                            <Badge bg="success" className="align-self-start mb-2">
-                                                Lácteos
-                                            </Badge>
-                                            <Card.Title className="h5 fw-bold">Productos Lácteos</Card.Title>
-                                            <Card.Text className="text-muted flex-grow-1">
-                                                Una variedad de productos lácteos, desde yogures hasta quesos, para un estilo de vida consciente.
-                                            </Card.Text>
-                                        </Card.Body>
-                                    </Card>
-                                </Col>
-                            </Row>
-                        </Carousel.Item>
-                    </Carousel>
-                </Container>
-            </section>
-            <section id="podio" style={{ margin: '2rem 0' }}>
+            <Carrusel />
+            <section
+                id="podio"
+                style={{
+                    margin: '2rem 0',
+                    padding: '2rem 0',
+                    background: 'linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%)',
+                    borderRadius: '32px',
+                    boxShadow: '0 4px 24px rgba(60,80,220,0.08)',
+                    position: 'relative'
+                }}
+            >
                 <Container>
-                    <h2 className="text-center mb-4"><i className="bi bi-trophy"></i> Producto más vendidos</h2>
+                    <h2 className="text-center mb-4" style={{ fontWeight: 'bold', fontSize: '2rem' }}>
+                        <i className="bi bi-trophy" style={{ color: '#FFD700', fontSize: '2.4rem', verticalAlign: 'middle', marginRight: '10px' }}></i>
+                        Productos más vendidos
+                    </h2>
                     <Row className="justify-content-center align-items-end">
                         {/* Segundo lugar */}
-                        <Col xs={6} md={4} className="text-center">
-                            <Card>
-                                <Card.Img variant="top" src={productosMasVendidos[1].imagen} alt={productosMasVendidos[1].nombre} />
+                        <Col xs={6} md={4} className="text-center" style={{ zIndex: 1 }}>
+                            <Card style={{
+                                width: '85%',
+                                margin: '0 auto',
+                                transform: 'translateY(32px)',
+                                boxShadow: '0 2px 10px rgba(0,0,0,0.07)'
+                            }}>
+                                <Card.Img variant="top" src={productosData[1].imagen} alt={productosData[1].nombre} />
                                 <Card.Body>
-                                    <Card.Title>🥈 {productosMasVendidos[1].nombre}</Card.Title>
-                                    <Card.Text>{productosMasVendidos[1].descripcion}</Card.Text>
+                                    <Card.Title style={{ fontSize: '1.15rem', color: '#C0C0C0', fontWeight: 600 }}>🥈 {productosData[1].nombre}</Card.Title>
+                                    <Card.Text>{productosData[1].descripcion}</Card.Text>
                                 </Card.Body>
                             </Card>
+                            {/* escalón */}
+                            <div style={{
+                                background: '#cfd8dc',
+                                height: '18px',
+                                width: '60%',
+                                margin: '0 auto',
+                                borderRadius: '0 0 16px 16px'
+                            }}></div>
                         </Col>
                         {/* Primer lugar */}
-                        <Col xs={6} md={4} className="text-center" style={{ marginBottom: '-16px' }}>
-                            <Card>
-                                <Card.Img variant="top" src={productosMasVendidos[0].imagen} alt={productosMasVendidos[0].nombre} />
+                        <Col xs={6} md={4} className="text-center" style={{ zIndex: 2 }}>
+                            <Card style={{
+                                width: '100%',
+                                margin: '0 auto',
+                                border: '3px solid #FFD700',
+                                boxShadow: '0 6px 24px rgba(255,215,0,0.18)',
+                                transform: 'translateY(0)',
+                                fontWeight: 'bold'
+                            }}>
+                                <Card.Img variant="top" src={productosData[0].imagen} alt={productosData[0].nombre} style={{ borderRadius: '16px 16px 0 0' }} />
                                 <Card.Body>
-                                    <Card.Title>🥇 {productosMasVendidos[0].nombre}</Card.Title>
-                                    <Card.Text>{productosMasVendidos[0].descripcion}</Card.Text>
+                                    <Card.Title style={{ fontSize: '1.33rem', color: '#FFD700', fontWeight: 700 }}>🥇 {productosData[0].nombre}</Card.Title>
+                                    <Card.Text>{productosData[0].descripcion}</Card.Text>
                                 </Card.Body>
                             </Card>
+                            {/* escalón */}
+                            <div style={{
+                                background: '#ffe082',
+                                height: '28px',
+                                width: '70%',
+                                margin: '0 auto',
+                                borderRadius: '0 0 20px 20px',
+                                boxShadow: '0 2px 14px rgba(255,215,0,0.08)'
+                            }}></div>
                         </Col>
                         {/* Tercer lugar */}
-                        <Col xs={6} md={4} className="text-center">
-                            <Card>
-                                <Card.Img variant="top" src={productosMasVendidos[2].imagen} alt={productosMasVendidos[2].nombre} />
+                        <Col xs={6} md={4} className="text-center" style={{ zIndex: 1 }}>
+                            <Card style={{
+                                width: '85%',
+                                margin: '0 auto',
+                                transform: 'translateY(32px)',
+                                boxShadow: '0 2px 10px rgba(0,0,0,0.07)'
+                            }}>
+                                <Card.Img variant="top" src={productosData[2].imagen} alt={productosData[2].nombre} />
                                 <Card.Body>
-                                    <Card.Title>🥉 {productosMasVendidos[2].nombre}</Card.Title>
-                                    <Card.Text>{productosMasVendidos[2].descripcion}</Card.Text>
+                                    <Card.Title style={{ fontSize: '1.15rem', color: '#CD7F32', fontWeight: 600 }}>🥉 {productosData[2].nombre}</Card.Title>
+                                    <Card.Text>{productosData[2].descripcion}</Card.Text>
                                 </Card.Body>
                             </Card>
+                            {/* escalón */}
+                            <div style={{
+                                background: '#bcaaa4',
+                                height: '18px',
+                                width: '60%',
+                                margin: '0 auto',
+                                borderRadius: '0 0 16px 16px'
+                            }}></div>
                         </Col>
                     </Row>
                 </Container>
@@ -212,7 +146,7 @@ export default function Body() {
             <section className="blog-promo-image-bg">
                 <div className="blog-promo-content">
                     <img
-                        src="/LogoTipo.png"
+                        src={logotipo}
                         alt="HuertoHogar"
                         className="blog-promo-logo"
                     />
