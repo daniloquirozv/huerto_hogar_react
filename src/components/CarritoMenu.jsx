@@ -1,4 +1,4 @@
-import { Offcanvas, Button, ListGroup, Badge, ButtonGroup } from "react-bootstrap";
+import { Offcanvas, Button, ListGroup, ButtonGroup } from "react-bootstrap";
 
 export default function CarritoMenu({ show, handleClose, carritoItems, onRemoveFromCart, onUpdateQuantity }) {
     // Calculate total
@@ -26,7 +26,7 @@ export default function CarritoMenu({ show, handleClose, carritoItems, onRemoveF
 
     return (
         <Offcanvas show={show} onHide={handleClose} placement="end">
-            <Offcanvas.Header closeButton style={{ backgroundColor: '#28a745', color: 'white' }}>
+            <Offcanvas.Header closeButton style={{ backgroundColor: '#2E8B57', color: 'white' }}>
                 <Offcanvas.Title>
                     <i className="bi bi-cart3 me-2"></i>
                     Mi Carrito
@@ -101,7 +101,7 @@ export default function CarritoMenu({ show, handleClose, carritoItems, onRemoveF
                                                         </Button>
                                                     </ButtonGroup>
                                                     <div className="text-end">
-                                                        <strong style={{ color: '#28a745', fontSize: '1.1rem' }}>
+                                                        <strong style={{ color: '#2E8B57', fontSize: '1.1rem' }}>
                                                             ${(item.precio * item.cantidad).toLocaleString('es-CL')}
                                                         </strong>
                                                         <div className="text-muted small">CLP</div>
