@@ -7,8 +7,7 @@ function BuscadorProductos({ onAddToCart }) {
     const [filteredProducts, setFilteredProducts] = useState([]);
     const [quantities, setQuantities] = useState({});
     const [selectedCategory, setSelectedCategory] = useState('');
-    const [minPrice, setMinPrice] = useState('');
-    const [maxPrice, setMaxPrice] = useState('');
+    const [priceOrder, setPriceOrder] = useState('');
 
     // Obtener categorías únicas
     const categories = [...new Set(productos.map(p => p.categoria))];
@@ -30,23 +29,20 @@ function BuscadorProductos({ onAddToCart }) {
             filtered = filtered.filter(producto => producto.categoria === selectedCategory);
         }
 
-        // Filtro por precio mínimo
-        if (minPrice !== '') {
-            filtered = filtered.filter(producto => producto.precio >= parseFloat(minPrice));
-        }
-
-        // Filtro por precio máximo
-        if (maxPrice !== '') {
-            filtered = filtered.filter(producto => producto.precio <= parseFloat(maxPrice));
+        // Ordenar por precio
+        if (priceOrder === 'asc') {
+            filtered = [...filtered].sort((a, b) => a.precio - b.precio); // Menor a mayor
+        } else if (priceOrder === 'desc') {
+            filtered = [...filtered].sort((a, b) => b.precio - a.precio); // Mayor a menor
         }
 
         // Mostrar productos solo si hay algún filtro activo
-        if (searchTerm.trim() !== '' || selectedCategory || minPrice !== '' || maxPrice !== '') {
+        if (searchTerm.trim() !== '' || selectedCategory || priceOrder) {
             setFilteredProducts(filtered);
         } else {
             setFilteredProducts([]);
         }
-    }, [searchTerm, selectedCategory, minPrice, maxPrice]);
+    }, [searchTerm, selectedCategory, priceOrder]);
 
     const handleQuantityChange = (codigo, value) => {
         const numValue = parseInt(value) || 0;
@@ -92,7 +88,7 @@ function BuscadorProductos({ onAddToCart }) {
 
                 {/* Filtros adicionales */}
                 <Row className="g-3 mb-3">
-                    <Col md={4}>
+                    <Col md={6}>
                         <Form.Group>
                             <Form.Label style={{ color: '#2E8B57', fontWeight: 'bold' }}>
                                 <i className="bi bi-tag me-2"></i>Categoría
@@ -109,48 +105,33 @@ function BuscadorProductos({ onAddToCart }) {
                             </Form.Select>
                         </Form.Group>
                     </Col>
-                    <Col md={4}>
+                    <Col md={6}>
                         <Form.Group>
                             <Form.Label style={{ color: '#2E8B57', fontWeight: 'bold' }}>
-                                <i className="bi bi-currency-dollar me-2"></i>Precio Mínimo (CLP)
+                                <i className="bi bi-sort-numeric-down me-2"></i>Ordenar por Precio
                             </Form.Label>
-                            <Form.Control
-                                type="number"
-                                placeholder="Ej: 1000"
-                                value={minPrice}
-                                onChange={(e) => setMinPrice(e.target.value)}
+                            <Form.Select
+                                value={priceOrder}
+                                onChange={(e) => setPriceOrder(e.target.value)}
                                 style={{ border: '2px solid #2E8B57' }}
-                                min="0"
-                            />
-                        </Form.Group>
-                    </Col>
-                    <Col md={4}>
-                        <Form.Group>
-                            <Form.Label style={{ color: '#2E8B57', fontWeight: 'bold' }}>
-                                <i className="bi bi-currency-dollar me-2"></i>Precio Máximo (CLP)
-                            </Form.Label>
-                            <Form.Control
-                                type="number"
-                                placeholder="Ej: 10000"
-                                value={maxPrice}
-                                onChange={(e) => setMaxPrice(e.target.value)}
-                                style={{ border: '2px solid #2E8B57' }}
-                                min="0"
-                            />
+                            >
+                                <option value="">Sin ordenar</option>
+                                <option value="asc">Precio: Menor a Mayor</option>
+                                <option value="desc">Precio: Mayor a Menor</option>
+                            </Form.Select>
                         </Form.Group>
                     </Col>
                 </Row>
 
                 {/* Botón para limpiar filtros */}
-                {(searchTerm || selectedCategory || minPrice || maxPrice) && (
+                {(searchTerm || selectedCategory || priceOrder) && (
                     <div className="text-center mb-3">
                         <Button
                             variant="outline-secondary"
                             onClick={() => {
                                 setSearchTerm('');
                                 setSelectedCategory('');
-                                setMinPrice('');
-                                setMaxPrice('');
+                                setPriceOrder('');
                             }}
                         >
                             <i className="bi bi-x-circle me-2"></i>
@@ -232,7 +213,7 @@ function BuscadorProductos({ onAddToCart }) {
                     </div>
                 )}
 
-                {(searchTerm || selectedCategory || minPrice || maxPrice) && filteredProducts.length === 0 && (
+                {(searchTerm || selectedCategory || priceOrder) && filteredProducts.length === 0 && (
                     <div className="text-center mt-4">
                         <i className="bi bi-emoji-frown" style={{ fontSize: '3rem', color: '#6c757d' }}></i>
                         <p className="text-muted mt-2">No se encontraron productos con los filtros aplicados</p>
