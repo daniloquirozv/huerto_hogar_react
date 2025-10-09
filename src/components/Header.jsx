@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Navbar, Nav, Container, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import CarritoMenu from "./CarritoMenu";
 import LoginModal from "./LoginModal";
 import BarraMenu from "./BarraMenu";
@@ -10,6 +10,10 @@ export default function Header({ carritoItems = [], onRemoveFromCart, onUpdateQu
     const [showMenu, setShowMenu] = useState(false);
     const [showCart, setShowCart] = useState(false);
     const [showLogin, setShowLogin] = useState(false);
+    const location = useLocation();
+    
+    // Verificar si estamos en la página del carrito
+    const isCarritoPage = location.pathname === '/carrito';
 
     return (
         <>
@@ -47,26 +51,29 @@ export default function Header({ carritoItems = [], onRemoveFromCart, onUpdateQu
                         <Nav.Link onClick={() => setShowLogin(true)}>
                             <i className="bi bi-person-circle fs-2"></i>
                         </Nav.Link>
-                        <Nav.Link
-                            onClick={() => setShowCart(true)}
-                            style={{ position: 'relative', cursor: 'pointer' }}
-                        >
-                            <i className="bi bi-cart3 fs-2"></i>
-                            <span
-                                style={{
-                                    position: "absolute",
-                                    top: "4px",
-                                    right: "4px",
-                                    background: "red",
-                                    color: "white",
-                                    borderRadius: "50%",
-                                    padding: "2px 6px",
-                                    fontSize: "0.8em",
-                                }}
+                        {/* Ocultar el carrito si estamos en la página del carrito */}
+                        {!isCarritoPage && (
+                            <Nav.Link
+                                onClick={() => setShowCart(true)}
+                                style={{ position: 'relative', cursor: 'pointer' }}
                             >
-                                {carritoItems.length}
-                            </span>
-                        </Nav.Link>
+                                <i className="bi bi-cart3 fs-2"></i>
+                                <span
+                                    style={{
+                                        position: "absolute",
+                                        top: "4px",
+                                        right: "4px",
+                                        background: "red",
+                                        color: "white",
+                                        borderRadius: "50%",
+                                        padding: "2px 6px",
+                                        fontSize: "0.8em",
+                                    }}
+                                >
+                                    {carritoItems.length}
+                                </span>
+                            </Nav.Link>
+                        )}
                     </Nav>
                 </Container>
             </Navbar>
