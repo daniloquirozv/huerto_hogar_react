@@ -38,7 +38,8 @@ export default function Header({ carritoItems = [], onRemoveFromCart, onUpdateQu
                     {/* Menú principal siempre visible */}
                     <Nav className="mx-auto justify-content-center">
                         <Nav.Link as={Link} to="/plantas">Inicio</Nav.Link>
-                        <Nav.Link href="#consejos">Productos</Nav.Link>
+                        <Nav.Link as={Link} to={"/producto"}>Productos</Nav.Link>
+                        <Nav.Link as={Link} to={"/carrito"}>Carrito</Nav.Link>
                         <Nav.Link href="#calendario">Blog</Nav.Link>
                         <Nav.Link href="#about">Contacto</Nav.Link>
                     </Nav>
