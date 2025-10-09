@@ -16,7 +16,7 @@ export default function Header() {
     return (
         <>
             <Navbar bg="success" variant="dark" className="shadow">
-                <Container className="d-flex align-items-center">
+                <Container className="d-flex align-items-center justify-content-between">
                     <div className="logo-menu-capsule d-flex align-items-center px-3 py-2">
 
                         <Button
@@ -28,7 +28,7 @@ export default function Header() {
                                 border: 'none',
                                 marginRight: '12px',
                                 fontSize: '2rem',
-                                color: 'white',
+                                color: 'black',
                             }}
                         >
                             <i className="bi bi-list"></i>
@@ -38,13 +38,13 @@ export default function Header() {
                         </Navbar.Brand>
                     </div>
                     {/* Menú principal siempre visible */}
-                    <Nav className="mx-auto justify-content-center">
+                    <Nav className="menu-centro mx-auto">
                         <Nav.Link as={Link} to="/plantas">Inicio</Nav.Link>
                         <Nav.Link href="#consejos">Productos</Nav.Link>
                         <Nav.Link href="#calendario">Blog</Nav.Link>
                         <Nav.Link href="#about">Contacto</Nav.Link>
                     </Nav>
-                    <Nav className="ms-auto">
+                    <Nav className="iconos-derecha">
                         <Nav.Link onClick={() => setShowLogin(true)}>
                             <i className="bi bi-person-circle fs-2"></i>
                         </Nav.Link>

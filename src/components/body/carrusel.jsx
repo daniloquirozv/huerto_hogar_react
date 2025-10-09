@@ -11,7 +11,7 @@ export default function Carrusel() {
   };
 
   return (
-    <section className="py-5 bg-white" id="catalogo">
+    <section className="py-5" id="catalogo">
       <Container fluid className="catalogo-container">
         <Row className="mb-5">
           <Col lg={8} className="mx-auto text-center">
@@ -23,6 +23,7 @@ export default function Carrusel() {
         </Row>
         
         <Carousel 
+          className="carrusel-ancho"
           activeIndex={index} 
           onSelect={handleSelect}
           interval={3000}
@@ -37,9 +38,12 @@ export default function Carrusel() {
                 src={prod.imagen}
                 alt={prod.titulo}
                 style={{
-                  height: '400px',
+                  width: '10%',
+                  height: '1000px',
                   objectFit: 'cover',
-                  borderRadius: '10px'
+                  objectPosition: 'center 50%',
+                  borderRadius: '10px',
+                  padding: '10px'
                 }}
               />
               <Carousel.Caption>

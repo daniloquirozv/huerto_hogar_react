@@ -10,29 +10,13 @@ export default function BarraMenu({ show, onHide }) {
     }, [show]);
 
     return (
-        <Offcanvas show={show} onHide={onHide} placement="start" backdrop="static" className="barra-menu-offcanvas">
+        <Offcanvas show={show} onHide={onHide} placement="start" backdrop="static" className="barra-menu-offcanvas success">
             <Offcanvas.Header closeButton>
                 <Offcanvas.Title>
                     <img src={logotipo} alt="LogoTipo" width={110} style={{ marginBottom: "-16px" }} />
                 </Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
-                {/* Botón inicio sesión/registro */}
-                <div className="d-flex justify-content-center mb-3">
-                    <Button
-                        as={Link}
-                        to="/login"
-                        variant="primary"
-                        style={{
-                            fontWeight: 600,
-                            fontSize: "1rem",
-                            borderRadius: "22px",
-                            padding: "0.6rem 1.4rem"
-                        }}
-                    >
-                        Iniciar sesión o crea una cuenta
-                    </Button>
-                </div>
                 {/* Sección búsqueda */}
                 <div style={{ padding: "10px 0", borderBottom: "1px solid #f0f0f0" }}>
                     <div className="d-flex align-items-center gap-2 mb-2" style={{ fontSize: "1.05rem" }}>
@@ -40,7 +24,7 @@ export default function BarraMenu({ show, onHide }) {
                         <span>¿Qué estás buscando hoy?</span>
                     </div>
                     <div style={{ fontSize: "0.96rem", color: "#444", marginBottom: "7px" }}>
-                        <strong>Supermercado</strong>
+                        <strong>Tienda Online</strong>
                         <div style={{ fontSize: "0.92rem", color: "#888" }}>
                             Todo lo que necesitas para tu despensa, ¡y más!
                         </div>
@@ -52,34 +36,59 @@ export default function BarraMenu({ show, onHide }) {
                         marginBottom: "5px",
                         padding: "4px 8px"
                     }}>
-                        <strong>Mundo Huerto</strong>
+                        <strong>Productos</strong>
                         <div style={{ color: "#1d7bcc", fontSize: "0.93rem" }}>
-                            Miles de productos frescos, hogar y jardín
+                            Miles de productos a tu alcance...
                         </div>
                     </div>
                 </div>
                 {/* Sección de accesos */}
                 <div style={{ borderBottom: "1px solid #f0f0f0", padding: "14px 0" }}>
                     <div className="d-flex align-items-center gap-2 mb-3" style={{ cursor: "pointer" }}>
-                        <i className="bi bi-receipt" style={{ fontSize: "1.2rem" }}></i>
-                        <span>Mis Pedidos</span>
+                        <i className="bi bi-gear" style={{ fontSize: "1.2rem" }}></i>
+                        <span>Configuración</span>
                     </div>
                     <div className="d-flex align-items-center gap-2 mb-3" style={{ cursor: "pointer" }}>
                         <i className="bi bi-person" style={{ fontSize: "1.2rem" }}></i>
-                        <span>Cuenta</span>
+                        <span>Mi perfil</span>
+                    </div>
+                    <div className="d-flex align-items-center gap-2 mb-3" style={{ cursor: "pointer" }}>
+                        <i className="bi bi-tag" style={{ fontSize: "1.2rem" }}></i>
+                        <span>Ofertas</span>
                     </div>
                 </div>
-                {/* Ayuda y categorías */}
+                {/* Ayuda y Secciones */}
                 <div style={{ padding: "14px 0" }}>
+                    <div className="d-flex align-items-center gap-2 mb-3" style={{ cursor: "pointer" }}>
+                        <i className="bi bi-chat" style={{ fontSize: "1.2rem" }}></i>
+                        <span>Blog</span>
+                        {/* <i className="bi bi-chevron-right ms-auto" style={{ fontSize: "1.2rem" }}></i> */}
+                    </div>
+                    <div className="d-flex align-items-center gap-2 mb-3" style={{ cursor: "pointer" }}>
+                        <i className="bi bi-telephone" style={{ fontSize: "1.2rem" }}></i>
+                        <span>Contacto</span>
+                        <i className="bi bi-chevron-right ms-auto" style={{ fontSize: "1.2rem" }}></i>
+                    </div>
                     <div className="d-flex align-items-center gap-2 mb-3" style={{ cursor: "pointer" }}>
                         <i className="bi bi-question-circle" style={{ fontSize: "1.2rem" }}></i>
                         <span>Ayuda</span>
                     </div>
-                    <div className="d-flex align-items-center gap-2 mb-3" style={{ cursor: "pointer" }}>
-                        <i className="bi bi-grid" style={{ fontSize: "1.2rem" }}></i>
-                        <span>Categorías</span>
-                        <i className="bi bi-chevron-right ms-auto" style={{ fontSize: "1.2rem" }}></i>
-                    </div>
+                </div>
+                {/* Botón inicio sesión/registro */}
+                <div className="d-flex justify-content-center mb-3">
+                    <Button
+                        as={Link}
+                        to="/login"
+                        variant="success"
+                        style={{
+                            fontWeight: 600,
+                            fontSize: "1rem",
+                            borderRadius: "22px",
+                            padding: "0.6rem 1.4rem"
+                        }}
+                    >
+                        Iniciar sesión o crea una cuenta
+                    </Button>
                 </div>
             </Offcanvas.Body>
         </Offcanvas>
