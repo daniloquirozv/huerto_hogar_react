@@ -1,9 +1,11 @@
 import { Offcanvas, Button, ListGroup, ButtonGroup } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 export default function CarritoMenu({ show, handleClose, carritoItems, onRemoveFromCart, onUpdateQuantity }) {
+    const navigate = useNavigate();
     // Calculate total
     const total = carritoItems.reduce((sum, item) => {
-        return sum + (item.precio * item.cantidad);
+        return sum + (item.precio * item.quantity);
     }, 0);
 
     const handleIncreaseQuantity = (codigo, currentQuantity) => {
@@ -82,7 +84,7 @@ export default function CarritoMenu({ show, handleClose, carritoItems, onRemoveF
                                                     <ButtonGroup size="sm">
                                                         <Button 
                                                             variant="outline-success"
-                                                            onClick={() => handleDecreaseQuantity(item.codigo, item.cantidad)}
+                                                            onClick={() => handleDecreaseQuantity(item.codigo, item.quantity)}
                                                         >
                                                             <i className="bi bi-dash"></i>
                                                         </Button>
@@ -91,18 +93,18 @@ export default function CarritoMenu({ show, handleClose, carritoItems, onRemoveF
                                                             disabled
                                                             style={{ minWidth: '60px' }}
                                                         >
-                                                            {item.cantidad}
+                                                            {item.quantity}
                                                         </Button>
                                                         <Button 
                                                             variant="outline-success"
-                                                            onClick={() => handleIncreaseQuantity(item.codigo, item.cantidad)}
+                                                            onClick={() => handleIncreaseQuantity(item.codigo, item.quantity)}
                                                         >
                                                             <i className="bi bi-plus"></i>
                                                         </Button>
                                                     </ButtonGroup>
                                                     <div className="text-end">
                                                         <strong style={{ color: '#2E8B57', fontSize: '1.1rem' }}>
-                                                            ${(item.precio * item.cantidad).toLocaleString('es-CL')}
+                                                            ${(item.precio * item.quantity).toLocaleString('es-CL')}
                                                         </strong>
                                                         <div className="text-muted small">CLP</div>
                                                     </div>
@@ -132,6 +134,10 @@ export default function CarritoMenu({ show, handleClose, carritoItems, onRemoveF
                                 <Button 
                                     variant="success" 
                                     className="flex-grow-1"
+                                    onClick={() => {
+                                        handleClose();
+                                        navigate('/carrito');
+                                    }}
                                 >
                                     <i className="bi bi-credit-card me-2"></i>
                                     Pagar
