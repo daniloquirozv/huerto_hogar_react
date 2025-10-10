@@ -198,12 +198,26 @@ function CarritoMainComponent({
                         </Card>
 
                         {/* Botón para vaciar carrito */}
-                        <div className="text-end">
+                        <div className="text-end" >
                             <Button 
                                 variant="outline-danger"
                                 onClick={onClearCart}
+                                style={{
+                                    backgroundColor: 'white',
+                                    borderColor: '#dc3545',
+                                    color: '#dc3545',
+                                    transition: 'all 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.backgroundColor = '#dc3545';
+                                    e.currentTarget.style.color = 'white';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.backgroundColor = 'white';
+                                    e.currentTarget.style.color = '#dc3545';
+                                }}
                             >
-                                <i className="bi bi-trash3 me-2"></i>
+                                <i className="bi bi-trash3 me-2" ></i>
                                 Vaciar Carrito
                             </Button>
                         </div>
