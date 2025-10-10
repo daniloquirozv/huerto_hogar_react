@@ -3,3 +3,12 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
+
+// Configuración global para Vitest
+import { expect, afterEach } from 'vitest';
+import { cleanup } from '@testing-library/react';
+
+// Limpia después de cada test
+afterEach(() => {
+  cleanup();
+});

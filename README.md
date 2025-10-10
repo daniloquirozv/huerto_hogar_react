@@ -1,43 +1,56 @@
-# Getting Started with Create React App
+# Huerto Hogar React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aplicación web de e-commerce para productos del hogar construida con React y Vite.
 
-## Available Scripts
+## 🚀 Tecnologías
 
-In the project directory, you can run:
+- **React 19** - Biblioteca de UI
+- **Vite** - Build tool y dev server ultrarrápido
+- **React Router** - Navegación entre páginas
+- **React Bootstrap** - Componentes UI
+- **Vitest** - Framework de testing
 
-### `npm start`
+## 📦 Instalación
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+npm install
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Scripts Disponibles
 
-### `npm test`
+### `npm run dev`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Inicia el servidor de desarrollo con Vite.\
+Abre [http://localhost:3000](http://localhost:3000) para verlo en el navegador.
+
+La página se recargará automáticamente cuando hagas cambios.\
+Los errores aparecerán en la consola.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Construye la aplicación para producción en la carpeta `build`.\
+Optimiza el build para el mejor rendimiento.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Los archivos están minificados y listos para deployment.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `npm run preview`
 
-### `npm run eject`
+Previsualiza el build de producción localmente.\
+Útil para verificar el build antes de deployar.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### `npm test`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Ejecuta los tests con Vitest en modo watch.\
+Los tests se re-ejecutan automáticamente cuando cambias archivos.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### `npm run test:ui`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Abre la interfaz visual de Vitest para ver y ejecutar tests de forma interactiva.
+
+### `npm run coverage`
+
+Genera un reporte de cobertura de tests.\
+El reporte se guarda en la carpeta `coverage`.
 
 ## Learn More
 
