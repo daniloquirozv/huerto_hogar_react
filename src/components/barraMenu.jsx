@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { Offcanvas, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import logotipo from '../../assets/images/principal/LogoTipo.png';
+import logotipo from '../assets/images/principal/LogoTipo.png';
 
-export default function BarraMenu({ show, onHide }) {
+export default function BarraMenu({ show, onHide, onShowLogin, onShowCart }) {
     useEffect(() => {
         document.body.classList.toggle('non-scroll', show);
         return () => document.body.classList.remove('non-scroll');
@@ -44,13 +44,31 @@ export default function BarraMenu({ show, onHide }) {
                 </div>
                 {/* Sección de accesos */}
                 <div style={{ borderBottom: "1px solid #f0f0f0", padding: "14px 0" }}>
+                    <div 
+                        className="d-flex align-items-center gap-2 mb-3" 
+                        style={{ cursor: "pointer" }}
+                        onClick={() => {
+                            onShowLogin();
+                            onHide();
+                        }}
+                    >
+                        <i className="bi bi-person" style={{ fontSize: "1.2rem" }}></i>
+                        <span>Mi perfil</span>
+                    </div>
+                    <div 
+                        className="d-flex align-items-center gap-2 mb-3" 
+                        style={{ cursor: "pointer" }}
+                        onClick={() => {
+                            onShowCart();
+                            onHide();
+                        }}
+                    >
+                        <i className="bi bi-cart3" style={{ fontSize: "1.2rem" }}></i>
+                        <span>Mi carrito</span>
+                    </div>
                     <div className="d-flex align-items-center gap-2 mb-3" style={{ cursor: "pointer" }}>
                         <i className="bi bi-gear" style={{ fontSize: "1.2rem" }}></i>
                         <span>Configuración</span>
-                    </div>
-                    <div className="d-flex align-items-center gap-2 mb-3" style={{ cursor: "pointer" }}>
-                        <i className="bi bi-person" style={{ fontSize: "1.2rem" }}></i>
-                        <span>Mi perfil</span>
                     </div>
                     <div className="d-flex align-items-center gap-2 mb-3" style={{ cursor: "pointer" }}>
                         <i className="bi bi-tag" style={{ fontSize: "1.2rem" }}></i>

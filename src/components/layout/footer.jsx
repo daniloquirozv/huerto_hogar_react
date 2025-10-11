@@ -1,78 +1,80 @@
 import { Col, Container, Row } from "react-bootstrap";
-import '../../assets/principal-style.css';
+import '../../assets/style/principal-style.css';
+import { useState } from "react";
+import { tiendas } from "../../data/tiendas";
+import GoogleMapsIntegration from "../ui/GoogleMapsIntegration";
 
 export default function Footer() {
+
+    const [selectedStore, setSelectedStore] = useState(null);
+
+    // Cuando seleccionas una tienda, actualiza el estado
+    const handleStoreClick = (idx) => {
+        setSelectedStore(idx);
+    };
+
     return (
-        <footer className="footer-eco text-white pt-5">
+        <footer className="footer-eco">
             {/* Sección principal del footer */}
-            <Container className="py-5">
-                <Row className="gy-4">
+            <Container className="container-fluid py-5">
+                <Row className="gy-4 gx-4">
                     {/* Columna izquierda - Información de contacto */}
-                    <Col lg={4} md={6}>
+                    <Col lg={4} md={6} className="text-center px-3">
                         {/* Tiendas asociadas */}
-                        <div className="mt-4">
-                            <h6 className="eco-title mb-3">
+                        <div className="mb-4">
+                            <h5 className="eco-title mb-4">
                                 <i className="bi bi-shop me-2 text-black"></i>
                                 Tiendas Asociadas
-                            </h6>
+                            </h5>
                             <div className="footer-list text-start">
-                                <small className="d-flex align-items-center mb-2">
-                                    <i className="bi bi-shop me-2 text-black"></i>Santiago
-                                </small>
-                                <small className="d-flex align-items-center mb-2">
-                                    <i className="bi bi-shop me-2 text-black"></i>Viña del Mar
-                                </small>
-                                <small className="d-flex align-items-center mb-2">
-                                    <i className="bi bi-shop me-2 text-black"></i>Valparaíso
-                                </small>
-                                <small className="d-flex align-items-center mb-2">
-                                    <i className="bi bi-shop me-2 text-black"></i>Villarica
-                                </small>
-                                <small className="d-flex align-items-center mb-2">
-                                    <i className="bi bi-shop me-2 text-black"></i>Nacimiento
-                                </small>
-                                <small className="d-flex align-items-center mb-2">
-                                    <i className="bi bi-shop me-2 text-black"></i>Puerto Montt
-                                </small>
-                                <small className="d-flex align-items-center mb-2">
-                                    <i className="bi bi-shop me-2 text-black"></i>Concepción
-                                </small>
+                                <ul className="list-unstyled footer-list mb-2">
+                                    {tiendas.map((tienda, idx) => (
+                                        <li key={tienda.nombre}>
+                                            <i className="bi bi-geo-alt me-2"></i>
+                                            <b>
+                                                <span
+                                                    style={{
+                                                        color: selectedStore === idx ? '#28a745' : 'inherit',
+                                                        textDecoration: 'underline',
+                                                        cursor: 'pointer'
+                                                    }}
+                                                    onClick={() => handleStoreClick(idx)}
+                                                >
+                                                    {tienda.nombre}:
+                                                </span>
+                                            </b>
+                                            &nbsp;{tienda.direccion}. <br /> Tel: {tienda.telefono}
+                                        </li>
+                                    ))}
+                                </ul>
                             </div>
                         </div>
                     </Col>
 
-                    {/* Columna centro - Mapa */}
-                    <Col lg={4} md={6} className="text-center">
-                        <h5 className="eco-title mb-4">
+                    {/* Columna centro - Mapa Google */}
+                    <Col lg={4} md={6} className="text-center px-3">
+                        <h5 className="eco-title mb-3">
                             <i className="bi bi-geo-alt me-2 text-black"></i>
                             Encuéntranos
                         </h5>
-                        <div className="footer-mapa rounded-4 overflow-hidden shadow-sm mb-3">
-                            {/* Aquí irá el mapa real - por ahora un placeholder */}
-                            <iframe
-                                src="https://www.google.com/maps/d/u/2/embed?mid=16NlqHEBeBW25AW-x576Unqn466E82QU&ehbc=2E312F"
-                                className="ratio ratio-16x9"
+                        <div className="footer-google-maps rounded-4 overflow-hidden shadow-sm mb-2">
+                            {/* Mapa de Google My Maps Integrado */}
+                            <GoogleMapsIntegration
+                                selectedStore={selectedStore}
+                                onStoreSelect={handleStoreClick}
                                 width="100%"
-                                height="300"
-                                style={{ border: 0 }}
-                                allowFullScreen=""
-                                loading="lazy"
-                                referrerPolicy="no-referrer-when-downgrade"
-                                title="Ubicación HuertoHogar"
-                            ></iframe>
+                                height="350px"
+                                className="google-maps-footer"
+                            />
                         </div>
                     </Col>
 
                     {/* Columna derecha - Redes sociales */}
-                    <Col lg={4} md={12} className="text-center">
+                    <Col lg={4} className="text-center px-3">
                         <h5 className="eco-title mb-4">
                             <i className="bi bi-share me-2 text-black"></i>
                             Síguenos
                         </h5>
-                        <p className="mb-4" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
-                            Mantente conectado con nosotros en nuestras redes sociales
-                        </p>
-
                         {/* Botones de redes sociales */}
                         <div className="footer-social mb-4">
                             <a

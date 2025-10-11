@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import CarritoMenu from "./carritoMenu";
-import LoginModal from "./loginModal";
-import BarraMenu from "./barraMenu";
+import CarritoMenu from "../carritoMenu";
+import LoginModal from "../loginModal";
+import BarraMenu from "../barraMenu";
 import logotipo from '../../assets/images/principal/LogoTipo.png';
 
 export default function Header() {
@@ -37,8 +37,8 @@ export default function Header() {
                             <img src={logotipo} alt="LogoTipo" title="HuertoHogar" width={100} />
                         </Navbar.Brand>
                     </div>
-                    {/* Menú principal siempre visible */}
-                    <Nav className="menu-centro mx-auto">
+                    {/* Menú principal - oculto en pantallas pequeñas */}
+                    <Nav className="menu-centro mx-auto d-none d-lg-flex">
                         <Nav.Link as={Link} to="/plantas">Inicio</Nav.Link>
                         <Nav.Link href="#consejos">Productos</Nav.Link>
                         <Nav.Link href="#calendario">Blog</Nav.Link>
@@ -73,7 +73,12 @@ export default function Header() {
             </Navbar>
             <CarritoMenu show={showCart} handleClose={() => setShowCart(false)} carritoItems={cartItems} />
             <LoginModal show={showLogin} handleClose={() => setShowLogin(false)} />
-            <BarraMenu show={showMenu} onHide={() => setShowMenu(false)} />
+            <BarraMenu 
+                show={showMenu} 
+                onHide={() => setShowMenu(false)}
+                onShowLogin={() => setShowLogin(true)}
+                onShowCart={() => setShowCart(true)}
+            />
         </>
     )
 }
