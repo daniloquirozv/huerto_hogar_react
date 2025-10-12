@@ -1,6 +1,6 @@
 import { productosMasVendidos as productosData } from "../../data/productosMasVendidos";
 import { Container, Row, Col, Card } from "react-bootstrap";
-import '../../assets/style/principal-style.css';
+import '../../assets/styles/principal-style.css';
 
 export default function Podio() {
     return (

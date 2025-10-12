@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { tiendas } from '../../data/tiendas';
-import '../../assets/style/GoogleMapsIntegration.css';
+import '../../assets/styles/GoogleMapsIntegration.css';
 
 const GoogleMapsIntegration = ({ 
     selectedStore, 

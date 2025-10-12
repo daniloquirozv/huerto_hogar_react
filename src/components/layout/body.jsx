@@ -1,6 +1,6 @@
 import { Badge, Button, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import '../../assets/style/principal-style.css'
+import '../../assets/styles/principal-style.css'
 import fondo from '../../assets/images/principal/fondo3.avif';
 import logotipo from '../../assets/images/principal/LogoTipo.png';
 import Carrusel from "../ui/carrusel";
