@@ -8,24 +8,24 @@ export const catalogo = [
     imagen: catologoFruta,
     badge: 'Frutas',
     titulo: 'Frutas Frescas',
-    descripcion: 'Frutas frescas y jugosas, cultivadas localmente para garantizar la mejor calidad y sabor.'
+    descripcion: 'Disfruta de la frescura y el sabor de frutas de temporada, cosechadas en su punto óptimo de madurez. La fuente perfecta de vitaminas y nutrientes esenciales, ideales para consumir solas, en ensaladas o en tus postres y smoothies favoritos.'
   },
   {
     imagen: catologoVerdura,
     badge: 'Verduras',
     titulo: 'Verduras Orgánicas',
-    descripcion: 'Verduras orgánicas, libres de pesticidas y cultivadas con prácticas sostenibles.'
+    descripcion: 'Cultivadas sin pesticidas ni químicos, nuestras verduras orgánicas te ofrecen la máxima calidad y valor nutricional. Ricas en vitaminas, minerales y fibra, son la base perfecta para una alimentación consciente, saludable y sostenible.'
   },
   {
     imagen: catologoOrganico,
     badge: 'Orgánicos',
     titulo: 'Productos Orgánicos',
-    descripcion: 'Una variedad de productos orgánicos, desde granos hasta snacks saludables, para un estilo de vida consciente.'
+    descripcion: 'Explora nuestra selección de aceites, miel, granos y semillas, elaborados con ingredientes naturales y procesos responsables. Opciones que apoyan un estilo de vida saludable y respetuoso con el medio ambiente, sin comprometer el sabor.'
   },
   {
     imagen: catologoLacteos,
     badge: 'Lácteos',
     titulo: 'Productos Lácteos',
-    descripcion: 'Una variedad de productos lácteos, desde yogures hasta quesos, para un estilo de vida consciente.'
+    descripcion: 'Lácteos de HuertoHogar provenientes de producción responsable. Ofrecemos leches, yogures y derivados ricos en calcio y nutrientes esenciales. El mejor sabor y nutrición para complementar la dieta equilibrada de toda la familia.'
   }
 ]

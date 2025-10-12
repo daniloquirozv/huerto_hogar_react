@@ -1,4 +1,7 @@
 import image from '../assets/images/principal/Comunidad.png';
+import descuento from '../assets/images/principal/FondoDescuento.png'
+import sale from '../assets/images/principal/descuento50.png'
+import remate from '../assets/images/principal/remate.png'
 export const blogPosts = [
     {
         id: 1,
@@ -6,17 +9,16 @@ export const blogPosts = [
         categoria: "Promociones",
         fecha: "2025-10-10",
         autor: "Equipo HuertoHogar",
-        imagen: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=400&fit=crop",
-        resumen: "¡Aprovecha nuestra súper oferta en verduras orgánicas! Descuentos de hasta 30% en lechugas, tomates, zanahorias y más.",
+        imagen: descuento,
+        resumen: "¡Aprovecha nuestra súper oferta en verduras orgánicas! Descuentos de hasta 30% en zanahorias, espinacas, pimientos y más.",
         contenido: `
             <div class="promocion-destacada">
-                <h3>🥬 ¡Verduras Frescas con 30% de Descuento! 🥕</h3>
+                <h3>🥬¡Verduras Frescas con 30% de Descuento!🥕</h3>
                 <p>Esta semana tenemos una promoción especial en nuestras verduras orgánicas más populares:</p>
                 <ul>
-                    <li><strong>Lechugas orgánicas:</strong> Antes $2.500 - Ahora $1.750</li>
-                    <li><strong>Tomates cherry:</strong> Antes $3.200 - Ahora $2.240</li>
-                    <li><strong>Zanahorias baby:</strong> Antes $1.800 - Ahora $1.260</li>
-                    <li><strong>Espinacas frescas:</strong> Antes $2.000 - Ahora $1.400</li>
+                    <li><strong>Pimientos tricolores:</strong> Antes $1.500/kg - Ahora $1.050/kg</li>
+                    <li><strong>Zanahorias orgánicas:</strong> Antes $900/kg - Ahora $630/kg</li>
+                    <li><strong>Espinacas frescas:</strong> Antes $700/kg - Ahora $490/kg</li>
                 </ul>
                 <div class="cupon-descuento">
                     <h4>🎟️ Cupón: VERDURAS30</h4>
@@ -90,11 +92,11 @@ export const blogPosts = [
     },
     {
         id: 4,
-        titulo: "¡FLASH SALE! 50% OFF en Catálogo de Productos Orgánicos ",
+        titulo: "¡FLASH SALE! 50% OFF en Catálogo de Productos Orgánicos",
         categoria: "Promociones",
         fecha: "2025-10-09",
         autor: "Equipo HuertoHogar",
-        imagen: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=400&fit=crop",
+        imagen: sale,
         resumen: "¡Solo por 48 horas! Disfruta de un 50% de descuento en nuestro catálogo de productos orgánicos.",
         contenido: `
             <div class="flash-sale">
@@ -102,8 +104,8 @@ export const blogPosts = [
                 <p class="urgencia">¡Hurry! Esta oferta termina pronto</p>
                 <h4>🌿 50% OFF en Productos Orgánicos</h4>
                 <ul>
-                    <li><strong>Miel Orgánica:</strong> $1.500 → $750</li>
-                    <li><strong>Quinoa Orgánica:</strong> $1.200 → $600</li>
+                    <li><strong>Miel Orgánica:</strong> $5.000 → $2.500</li>
+                    <li><strong>Quinoa Orgánica:</strong> $4.500 → $2.250</li>
                 </ul>
                 <div class="countdown">
                     <h4>⏰ ¡Tiempo Limitado!</h4>
@@ -162,17 +164,17 @@ export const blogPosts = [
         categoria: "Promociones",
         fecha: "2025-10-29",
         autor: "Equipo HuertoHogar",
-        imagen: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=800&h=400&fit=crop",
+        imagen: remate,
         resumen: "¡Última oportunidad! Descuentos de hasta 70% en productos de temporada. ¡No te lo pierdas!",
         contenido: `
             <div class="promocion-destacada">
                 <h3>¡REMATE! 70% OFF en Productos de Temporada</h3>
                 <p>Última oportunidad para aprovechar estos increíbles descuentos:</p>
                 <ul>
-                    <li><strong>Espinacas frescas:</strong> Antes $2.500 - Ahora $1.750</li>
-                    <li><strong>Leche Natural:</strong> Antes $3.200 - Ahora $2.240</li>
-                    <li><strong>Miel Orgánica:</strong> Antes $1.800 - Ahora $1.260</li>
-                    <li><strong>Naranjas Valencia:</strong> Antes $2.000 - Ahora $1.400</li>
+                    <li><strong>Espinacas frescas:</strong> Antes $700/kg - Ahora $210/kg</li>
+                    <li><strong>Leche Natural:</strong> Antes $3.800 - Ahora $1.140</li>
+                    <li><strong>Miel Orgánica:</strong> Antes $5.000 - Ahora $1.500</li>
+                    <li><strong>Naranjas Valencia:</strong> Antes $1.000/kg - Ahora $300/kg</li>
                 </ul>
                 <div class="cupon-descuento">
                     <h4>🎟️ Cupón: REMATE30</h4>

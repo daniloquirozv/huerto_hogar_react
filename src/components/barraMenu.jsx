@@ -40,10 +40,6 @@ export default function BarraMenu({ show, onHide, onShowLogin, onShowCart }) {
             <Offcanvas.Body>
                 {/* Sección búsqueda */}
                 <div style={{ padding: "10px 0", borderBottom: "1px solid #f0f0f0" }}>
-                    <div className="d-flex align-items-center gap-2 mb-2" style={{ fontSize: "1.05rem" }}>
-                        <i className="bi bi-search" style={{ fontSize: "1.3rem" }}></i>
-                        <span>¿Qué estás buscando hoy?</span>
-                    </div>
                     <div style={{ fontSize: "0.96rem", color: "#444", marginBottom: "7px" }}>
                         <strong>Tienda Online</strong>
                         <div style={{ fontSize: "0.92rem", color: "#888" }}>

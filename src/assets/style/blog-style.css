@@ -93,12 +93,18 @@
     transform: scale(1.05);
 }
 
+.post-imagen-principal-container{
+    padding: 20px;
+}
+
 .post-imagen-principal {
-    width: 100%;
+    width: 52%;
     height: 400px;
     object-fit: cover;
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    display: block;
+    margin: 0 auto;
 }
 
 /* Contenido de posts */

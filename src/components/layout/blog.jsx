@@ -13,7 +13,7 @@ const Blog = () => {
     const postsFiltrados = blogPosts.filter(post => {
         const coincideCategoria = categoriaSeleccionada === 'todas' || post.categoria === categoriaSeleccionada;
         const coincideBusqueda = post.titulo.toLowerCase().includes(busqueda.toLowerCase()) ||
-                                post.resumen.toLowerCase().includes(busqueda.toLowerCase());
+            post.resumen.toLowerCase().includes(busqueda.toLowerCase());
         return coincideCategoria && coincideBusqueda;
     });
 
@@ -36,22 +36,24 @@ const Blog = () => {
     if (postSeleccionado) {
         return (
             <Container className="blog-container py-5">
-                <Button 
-                    variant="outline-secondary" 
+                <Button
+                    variant="outline-secondary"
                     className="mb-4"
                     onClick={() => setPostSeleccionado(null)}
                 >
                     <i className="bi bi-arrow-left me-2"></i>
                     Volver al Blog
                 </Button>
-                
+
                 <article className="post-individual">
                     <header className="post-header text-center mb-4">
-                        <img 
-                            src={postSeleccionado.imagen} 
-                            alt={postSeleccionado.titulo}
-                            className="post-imagen-principal"
-                        />
+                        <div className='post-imagen-principal-container'>
+                            <img
+                                src={postSeleccionado.imagen}
+                                alt={postSeleccionado.titulo}
+                                className="post-imagen-principal"
+                            />
+                        </div>
                         <div className="post-meta mt-4">
                             <Badge bg="primary" className="me-2">{postSeleccionado.categoria}</Badge>
                             <small className="text-muted">
@@ -60,11 +62,11 @@ const Blog = () => {
                         </div>
                         <h1 className="post-titulo mt-3">{postSeleccionado.titulo}</h1>
                     </header>
-                    
-                    <div className="post-contenido" 
-                         dangerouslySetInnerHTML={{__html: postSeleccionado.contenido}}>
+
+                    <div className="post-contenido"
+                        dangerouslySetInnerHTML={{ __html: postSeleccionado.contenido }}>
                     </div>
-                    
+
                     {/* Cupón de descuento si existe */}
                     {postSeleccionado.codigoCupon && (
                         <Alert variant="success" className="cupon-alert mt-4">
@@ -79,19 +81,19 @@ const Blog = () => {
                                         <small>Válido hasta: {new Date(postSeleccionado.fechaVencimiento).toLocaleDateString('es-ES')}</small>
                                         <br />
                                         <small className="text-success">
-                                            ⏰ {diasRestantes(postSeleccionado.fechaVencimiento) > 0 
+                                            ⏰ {diasRestantes(postSeleccionado.fechaVencimiento) > 0
                                                 ? `${diasRestantes(postSeleccionado.fechaVencimiento)} días restantes`
                                                 : '¡Oferta vencida!'}
                                         </small>
                                     </p>
                                 </div>
-                                <Button 
-                                    variant="success" 
+                                <Button
+                                    variant="success"
                                     onClick={() => copiarCupon(postSeleccionado.codigoCupon)}
                                     disabled={diasRestantes(postSeleccionado.fechaVencimiento) <= 0}
                                 >
-                                    {cuponCopiado === postSeleccionado.codigoCupon ? 
-                                        <><i className="bi bi-check"></i> ¡Copiado!</> : 
+                                    {cuponCopiado === postSeleccionado.codigoCupon ?
+                                        <><i className="bi bi-check"></i> ¡Copiado!</> :
                                         <><i className="bi bi-clipboard"></i> Copiar Código</>
                                     }
                                 </Button>
@@ -150,7 +152,7 @@ const Blog = () => {
                     </InputGroup>
                 </Col>
                 <Col md={4}>
-                    <Form.Select 
+                    <Form.Select
                         value={categoriaSeleccionada}
                         onChange={(e) => setCategoriaSeleccionada(e.target.value)}
                     >
@@ -184,14 +186,17 @@ const Blog = () => {
                                     </Badge>
                                 </div>
                             )}
-                            
-                            <Card.Img 
-                                variant="top" 
-                                src={post.imagen} 
+
+
+                            <Card.Img
+                                variant="top"
+                                src={post.imagen}
                                 className="post-imagen"
-                                style={{ height: '200px', objectFit: 'cover' }}
+                                style={{ height: '200px', objectFit: 'cover', borderRadius: '15px 15px 0 0' }}
                             />
-                            
+
+
+
                             <Card.Body className="d-flex flex-column">
                                 <div className="post-meta mb-2">
                                     <Badge bg="primary" className="me-2">{post.categoria}</Badge>
@@ -199,15 +204,15 @@ const Blog = () => {
                                         {new Date(post.fecha).toLocaleDateString('es-ES')}
                                     </small>
                                 </div>
-                                
+
                                 <Card.Title className="post-titulo">
                                     {post.titulo}
                                 </Card.Title>
-                                
+
                                 <Card.Text className="post-resumen flex-grow-1">
                                     {post.resumen}
                                 </Card.Text>
-                                
+
                                 {/* Descuento si existe */}
                                 {post.descuento && (
                                     <div className="descuento-info mb-3">
@@ -218,29 +223,29 @@ const Blog = () => {
                                             Código: {post.codigoCupon}
                                         </small>
                                         <small className="text-success">
-                                            ⏰ {diasRestantes(post.fechaVencimiento) > 0 
+                                            ⏰ {diasRestantes(post.fechaVencimiento) > 0
                                                 ? `${diasRestantes(post.fechaVencimiento)} días restantes`
                                                 : '¡Oferta vencida!'}
                                         </small>
                                     </div>
                                 )}
-                                
+
                                 <div className="d-flex gap-2">
-                                    <Button 
-                                        variant="outline-primary" 
+                                    <Button
+                                        variant="outline-primary"
                                         className="flex-grow-1"
                                         onClick={() => setPostSeleccionado(post)}
                                     >
                                         Leer Más
                                     </Button>
                                     {post.codigoCupon && diasRestantes(post.fechaVencimiento) > 0 && (
-                                        <Button 
-                                            variant="success" 
+                                        <Button
+                                            variant="success"
                                             size="sm"
                                             onClick={() => copiarCupon(post.codigoCupon)}
                                         >
-                                            {cuponCopiado === post.codigoCupon ? 
-                                                <i className="bi bi-check"></i> : 
+                                            {cuponCopiado === post.codigoCupon ?
+                                                <i className="bi bi-check"></i> :
                                                 <i className="bi bi-clipboard"></i>
                                             }
                                         </Button>
