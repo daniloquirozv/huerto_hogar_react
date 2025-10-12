@@ -7,7 +7,7 @@ function RegistroScreen (){
     const [showLogin, setShowLogin] = React.useState(true);
     return (
         <>
-        <LoginUser show={showLogin} handleClose={() => setShowLogin(false)} />
+        
         <HeaderComponent />
         <div className="page-center">
             <div className="frame-box">

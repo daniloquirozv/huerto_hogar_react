@@ -15,8 +15,15 @@ function LoginUser({ show , handleClose}) {
                     <input className="login-input" type="email" name="email" placeholder="Correo" required />
                     <label className="password">Contraseña</label>
                     <input className="login-input" type="password" name="password" placeholder="Contraseña" required />
+                    <div className='remember-container'>
+                        <input type="checkbox" id="remember" name="remember" />
+                        <label htmlFor="remember">Recuérdame</label>
+                    </div>
+                    <p className='sin-cuenta'>si no tienes cuenta <a href="/registro">regístrate aquí</a></p>
+                   
                     <button className="login-button" type="submit">Login</button>
                 </form>
+
             </Modal.Body>
         </Modal>
     );
