@@ -1,6 +1,5 @@
 import FormRegistro from '../components/layout/FormRegistro'
-import Header from '../components/layout/header';
-import header from '../components/layout/header'
+
 import React from 'react';
 function RegistroScreen (){
     const [showLogin, setShowLogin] = React.useState(true);

@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import '../../assets/styles/FormRegistro.css';
+import styles from '../../assets/styles/FormRegistro.css';
 import { addUser } from '../../data/user';
 
 // Lista de regiones (constante local)
@@ -91,26 +92,26 @@ const FormRegistro = () => {
     };
 
     return (
-        <div className="container registro-container">
+        <div className={`container ${styles.registroContainer}`}>
             <div className="registro-title">Registro</div>
             <form onSubmit={handleSubmit} noValidate>
                 {/* Nombre */}
                 <div className="mb-3">
                     <label htmlFor="nombre" className="form-label">Nombre</label>
-                    <div className="input-with-overlay">
+                    <div className={`${styles.inputWithOverlay} input-with-overlay`}>
                         <input
                             id="nombre"
                             type="text"
                             placeholder="Ingrese su nombre"
-                            className={`form-control registro-input ${errores.nombre ? 'is-invalid' : ''}`}
+                            className={`form-control ${errores.nombre ? 'is-invalid' : ''} ${styles.registroInput}`}
                             aria-describedby={errores.nombre ? 'error-nombre' : undefined}
                             name="nombre"
                             value={formData.nombre}
                             onChange={handleChange}
                         />
                         {/* Mensaje de error superpuesto dentro del input (si campo vacío) */}
-                        {errores.nombre && !formData.nombre && (
-                            <span className="input-error-overlay">{errores.nombre}</span>
+                            {errores.nombre && !formData.nombre && (
+                            <span className={`${styles.inputErrorOverlay} input-error-overlay`}>{errores.nombre}</span>
                         )}
                     </div>
                     {/* Mensaje accesible debajo del input (role=alert) */}
@@ -120,19 +121,19 @@ const FormRegistro = () => {
                 {/* Apellido */}
                 <div className="mb-3">
                     <label htmlFor="apellido" className="form-label">Apellido</label>
-                    <div className="input-with-overlay">
+                    <div className={`${styles.inputWithOverlay} input-with-overlay`}>
                         <input
                             id="apellido"
                             type="text"
                             placeholder="Ingrese su apellido"
-                            className={`form-control registro-input ${errores.apellido ? 'is-invalid' : ''}`}
+                            className={`form-control ${errores.apellido ? 'is-invalid' : ''} ${styles.registroInput}`}
                             aria-describedby={errores.apellido ? 'error-apellido' : undefined}
                             name="apellido"
                             value={formData.apellido}
                             onChange={handleChange}
                         />
                         {errores.apellido && !formData.apellido && (
-                            <span className="input-error-overlay">{errores.apellido}</span>
+                            <span className={`${styles.inputErrorOverlay} input-error-overlay`}>{errores.apellido}</span>
                         )}
                     </div>
                     <div id="error-apellido" role="alert" className="invalid-feedback">{errores.apellido}</div>
@@ -141,19 +142,19 @@ const FormRegistro = () => {
                 {/* Correo */}
                 <div className="mb-3">
                     <label htmlFor="correo" className="form-label">Correo</label>
-                    <div className="input-with-overlay">
+                    <div className={`${styles.inputWithOverlay} input-with-overlay`}>
                         <input
                             id="correo"
                             type="email"
                             placeholder="Ingrese su correo"
-                            className={`form-control registro-input ${errores.correo ? 'is-invalid' : ''}`}
+                            className={`form-control ${errores.correo ? 'is-invalid' : ''} ${styles.registroInput}`}
                             aria-describedby={errores.correo ? 'error-correo' : undefined}
                             name="correo"
                             value={formData.correo}
                             onChange={handleChange}
                         />
                         {errores.correo && !formData.correo && (
-                            <span className="input-error-overlay">{errores.correo}</span>
+                            <span className={`${styles.inputErrorOverlay} input-error-overlay`}>{errores.correo}</span>
                         )}
                     </div>
                     <div id="error-correo" role="alert" className="invalid-feedback">{errores.correo}</div>
@@ -163,7 +164,7 @@ const FormRegistro = () => {
                 <div className="mb-3">
                     <label htmlFor="region" className="form-label">Región</label>
                     <div className="input-group">
-                        {/* Custom dropdown to control exact menu placement */}
+                        
                         <CustomRegionSelect
                             regiones={Rregiones}
                             value={formData.region}
@@ -181,19 +182,19 @@ const FormRegistro = () => {
                 {/* Contraseña */}
                 <div className="mb-3">
                     <label htmlFor="password" className="form-label">Contraseña</label>
-                    <div className="input-with-overlay">
+                    <div className={`${styles.inputWithOverlay} input-with-overlay`}>
                         <input
                             id="password"
                             type="password"
                             placeholder="Ingrese su contraseña"
-                            className={`form-control registro-input ${errores.password ? 'is-invalid' : ''}`}
+                            className={`form-control ${errores.password ? 'is-invalid' : ''} ${styles.registroInput}`}
                             aria-describedby={errores.password ? 'error-password' : undefined}
                             name="password"
                             value={formData.password}
                             onChange={handleChange}
                         />
                         {errores.password && !formData.password && (
-                            <span className="input-error-overlay">{errores.password}</span>
+                            <span className={`${styles.inputErrorOverlay} input-error-overlay`}>{errores.password}</span>
                         )}
                     </div>
                     <div id="error-password" role="alert" className="invalid-feedback">{errores.password}</div>
@@ -202,19 +203,19 @@ const FormRegistro = () => {
                 {/* Confirmar contraseña */}
                 <div className="mb-3">
                     <label htmlFor="password2" className="form-label">Confirmar Contraseña</label>
-                    <div className="input-with-overlay">
+                    <div className={`${styles.inputWithOverlay} input-with-overlay`}>
                         <input
                             id="password2"
                             type="password"
                             placeholder="Repita su contraseña"
-                            className={`form-control registro-input ${errores.password2 ? 'is-invalid' : ''}`}
+                            className={`form-control ${errores.password2 ? 'is-invalid' : ''} ${styles.registroInput}`}
                             aria-describedby={errores.password2 ? 'error-password2' : undefined}
                             name="password2"
                             value={formData.password2}
                             onChange={handleChange}
                         />
                         {errores.password2 && !formData.password2 && (
-                            <span className="input-error-overlay">{errores.password2}</span>
+                            <span className={`${styles.inputErrorOverlay} input-error-overlay`}>{errores.password2}</span>
                         )}
                     </div>
                     <div id="error-password2" role="alert" className="invalid-feedback">{errores.password2}</div>

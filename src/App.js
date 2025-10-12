@@ -9,12 +9,12 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
+      
         <Routes>
           <Route path="/" element={<PrincipalPage />} />
           <Route path="/registro" element={<RegistroScreen />} />
         </Routes>
-        <Footer />
+       
       </BrowserRouter>
     </div>
   );
