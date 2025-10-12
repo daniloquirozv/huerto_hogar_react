@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, Button, Badge, Form, InputGroup, Alert } from 'react-bootstrap';
-import { blogPosts, categoriasBlogs, promocionesActivas } from '../data/blogPosts';
-import '../assets/style/Blog.css';
+import { blogPosts, categoriasBlogs, promocionesActivas } from '../../data/blogPosts';
+import '../../assets/style/blog-style.css';
 
 const Blog = () => {
     const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('todas');
@@ -120,7 +120,7 @@ const Blog = () => {
             {/* Banner de Promociones Activas */}
             {promocionesActivas.length > 0 && (
                 <Alert variant="warning" className="promociones-banner mb-4">
-                    <div className="d-flex align-items-center">
+                    <div className="d-flex align-items-center justify-content-center text-center">
                         <i className="bi bi-lightning-fill fs-2 text-warning me-3"></i>
                         <div>
                             <Alert.Heading className="h5 mb-1">

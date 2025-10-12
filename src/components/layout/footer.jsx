@@ -2,7 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import '../../assets/style/principal-style.css';
 import { useState } from "react";
 import { tiendas } from "../../data/tiendas";
-import GoogleMapsIntegration from "../ui/GoogleMapsIntegration";
+import GoogleMapsIntegration from "../ui/googleMapsIntegration";
 
 export default function Footer() {
 
@@ -14,7 +14,7 @@ export default function Footer() {
     };
 
     return (
-        <footer className="footer-eco">
+        <footer className="footer-eco" id="contacto">
             {/* Sección principal del footer */}
             <Container className="container-fluid py-5">
                 <Row className="gy-4 gx-4">
@@ -129,13 +129,13 @@ export default function Footer() {
                             Todos los derechos reservados.
                         </p>
                         <div className="footer-links mb-3">
-                            <a href="#privacy" className="text-decoration-none me-4">
+                            <a href="#privacy" className="text-decoration-none me-4 text-white">
                                 Política de Privacidad
                             </a>
-                            <a href="#terms" className="text-decoration-none me-4">
+                            <a href="#terms" className="text-decoration-none me-4 text-white">
                                 Términos y Condiciones
                             </a>
-                            <a href="#cookies" className="text-decoration-none">
+                            <a href="#cookies" className="text-decoration-none text-white">
                                 Política de Cookies
                             </a>
                         </div>

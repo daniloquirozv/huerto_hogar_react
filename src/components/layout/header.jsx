@@ -13,6 +13,21 @@ export default function Header() {
     const [showLogin, setShowLogin] = useState(false);
     const cartItems = []; // Vacío para mostrar el mensaje, o con items
 
+    // Función para hacer scroll al footer de contacto
+    const scrollToContacto = () => {
+        setTimeout(() => {
+            const contactoElement = document.getElementById('contacto');
+            if (contactoElement) {
+                const elementPosition = contactoElement.offsetTop;
+                window.scrollTo({
+                    top: elementPosition - 20,
+                    behavior: 'smooth'
+                });
+            }
+        }, 100);
+    };
+    
+
     return (
         <>
             <Navbar bg="success" variant="dark" className="shadow">
@@ -39,10 +54,19 @@ export default function Header() {
                     </div>
                     {/* Menú principal - oculto en pantallas pequeñas */}
                     <Nav className="menu-centro mx-auto d-none d-lg-flex">
-                        <Nav.Link as={Link} to="/plantas">Inicio</Nav.Link>
-                        <Nav.Link href="#consejos">Productos</Nav.Link>
-                        <Nav.Link href="#calendario">Blog</Nav.Link>
-                        <Nav.Link href="#about">Contacto</Nav.Link>
+                        <Nav.Link as={Link} to="/menu">Inicio</Nav.Link>
+                        <Nav.Link href="#productos">Productos</Nav.Link>
+                        <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
+                        <Nav.Link 
+                            href="#contacto"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                scrollToContacto();
+                            }}
+                            style={{ cursor: 'pointer' }}
+                        >
+                            Contacto
+                        </Nav.Link>
                     </Nav>
                     <Nav className="iconos-derecha">
                         <Nav.Link onClick={() => setShowLogin(true)}>

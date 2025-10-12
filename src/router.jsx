@@ -1,12 +1,13 @@
 import { Routes, Route} from "react-router-dom";
 import Body from './components/layout/body';
-import Blog from './components/Blog';
+import Blog from './components/layout/blog';
+
 
 function AppRoutes(){
     return(
         <Routes>
             <Route path="/menu" element={<Body/>}/>
-            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog" element={<Blog/>}/>
         </Routes>
     )
 }

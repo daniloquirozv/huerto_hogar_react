@@ -5,7 +5,7 @@ import fondo from '../../assets/images/principal/fondo3.avif';
 import logotipo from '../../assets/images/principal/LogoTipo.png';
 import Carrusel from "../ui/carrusel";
 import Podio from "../ui/podio";
-import BannerDescuentos from "../ui/BannerDescuentos";
+import BannerDescuentos from "../ui/bannerDescuentos";
 
 
 export default function Body() {
@@ -53,7 +53,6 @@ export default function Body() {
             
             {/* Banner de Descuentos Dinámico */}
             <BannerDescuentos />
-            
             {/* Catálogo Section */}
             <Carrusel />
             {/* Podio de Productos Más Vendidos */}
@@ -75,11 +74,11 @@ export default function Body() {
                                 Descubre Nuestro Blog
                             </h2>
                             <h5 className="blog-promo-subtitle-new">
-                                Consejos, recetas y ofertas exclusivas
+                                Consejos, noticias y ofertas exclusivas
                             </h5>
                             <p className="blog-promo-text-new">
-                                Mantente al día con nuestros consejos de cultivo, recetas saludables 
-                                y las mejores promociones en productos orgánicos. 
+                                Mantente al día con nuestros consejos de cultivo, noticias 
+                                y las mejores promociones en productos frescos. 
                                 <strong> ¡No te pierdas nuestros descuentos especiales!</strong>
                             </p>
                             
@@ -134,8 +133,8 @@ export default function Body() {
                                     <strong>¡Última Hora!</strong>
                                 </div>
                                 <span className="news-text">
-                                    Flash Sale: 50% OFF en hierbas aromáticas - Solo 48h 
-                                    <span className="news-emojis">🌿✨</span>
+                                    Flash Sale: 50% OFF en productos orgánicos - Solo 48h 
+                                    <span className="news-emojis"><i className="bi bi-hourglass-split"></i></span>
                                 </span>
                             </div>
                         </Col>

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { tiendas } from '../../data/tiendas';
-import '../../assets/style/GoogleMapsIntegration.css';
+import '../../assets/style/principal-style.css';
 
 const GoogleMapsIntegration = ({ 
     selectedStore, 
@@ -9,8 +9,6 @@ const GoogleMapsIntegration = ({
     height = "350px",
     className = ""
 }) => {
-    const [showFullMap, setShowFullMap] = useState(false);
-    
     // URL del mapa embebido (versión pública para visualización)
     const mapEmbedUrl = "https://www.google.com/maps/d/embed?mid=16NlqHEBeBW25AW-x576Unqn466E82QU";
 

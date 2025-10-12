@@ -9,6 +9,27 @@ export default function BarraMenu({ show, onHide, onShowLogin, onShowCart }) {
         return () => document.body.classList.remove('non-scroll');
     }, [show]);
 
+    // Función para hacer scroll al footer de contacto
+    const scrollToContacto = () => {
+        // Primero cerrar el menú
+        onHide();
+        
+        // Esperar un poco para que el menú se cierre completamente y luego hacer scroll
+        setTimeout(() => {
+            const contactoElement = document.getElementById('contacto');
+            if (contactoElement) {
+                // Usar window.scrollTo para mayor control
+                const elementPosition = contactoElement.offsetTop;
+                window.scrollTo({
+                    top: elementPosition - 20, // Pequeño offset para mejor visualización
+                    behavior: 'smooth'
+                });
+            }
+        }, 300); // Dar tiempo para que el menú se cierre
+    };
+
+    
+
     return (
         <Offcanvas show={show} onHide={onHide} placement="start" backdrop="static" className="barra-menu-offcanvas success">
             <Offcanvas.Header closeButton>
@@ -77,12 +98,20 @@ export default function BarraMenu({ show, onHide, onShowLogin, onShowCart }) {
                 </div>
                 {/* Ayuda y Secciones */}
                 <div style={{ padding: "14px 0" }}>
-                    <div className="d-flex align-items-center gap-2 mb-3" style={{ cursor: "pointer" }}>
+                    <Link 
+                        to="/blog"
+                        className="d-flex align-items-center gap-2 mb-3 text-decoration-none text-dark" 
+                        style={{ cursor: "pointer" }}
+                        onClick={onHide}
+                    >
                         <i className="bi bi-chat" style={{ fontSize: "1.2rem" }}></i>
                         <span>Blog</span>
-                        {/* <i className="bi bi-chevron-right ms-auto" style={{ fontSize: "1.2rem" }}></i> */}
-                    </div>
-                    <div className="d-flex align-items-center gap-2 mb-3" style={{ cursor: "pointer" }}>
+                    </Link>
+                    <div 
+                        className="d-flex align-items-center gap-2 mb-3" 
+                        style={{ cursor: "pointer" }}
+                        onClick={scrollToContacto}
+                    >
                         <i className="bi bi-telephone" style={{ fontSize: "1.2rem" }}></i>
                         <span>Contacto</span>
                         <i className="bi bi-chevron-right ms-auto" style={{ fontSize: "1.2rem" }}></i>

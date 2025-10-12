@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Alert, Button, Badge, Container, Row, Col } from 'react-bootstrap';
 import { promocionesActivas } from '../../data/blogPosts';
-import '../../assets/style/BannerDescuentos.css';
+import '../../assets/style/principal-style.css';
 
 const BannerDescuentos = () => {
     const [promocionActual, setPromocionActual] = useState(0);
@@ -69,7 +69,7 @@ const BannerDescuentos = () => {
                                 <div className="banner-meta">
                                     <Badge bg="primary" className="me-2">{promo.categoria}</Badge>
                                     <small className="text-muted">
-                                        ⏰ {dias > 0 ? `${dias} días restantes` : '¡Última oportunidad!'}
+                                        <i className='bi bi-clock'></i> {dias > 0 ? `${dias} días restantes` : '¡Última oportunidad!'}
                                     </small>
                                 </div>
                             </div>
