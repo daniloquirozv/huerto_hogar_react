@@ -1,0 +1,961 @@
+/* Variables CSS para el footer eco */
+:root {
+  --verde-esmeralda: #2E8B57;
+  --amarillo-mostaza: #f4d03f;
+}
+
+/* Estilos para información de contacto en footer */
+.footer-info-contacto {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contacto-item {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.contacto-item:hover {
+  color: white;
+  transform: translateX(5px);
+}
+
+.contacto-item i {
+  font-size: 1rem;
+  width: 20px;
+  text-align: center;
+}
+
+/* Estilos específicos para el mapa de Google en el footer */
+.footer-google-maps {
+  border-radius: 16px !important;
+  overflow: hidden;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12) !important;
+  transition: all 0.4s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.footer-google-maps:hover {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18) !important;
+  transform: translateY(-2px);
+}
+
+.google-maps-footer {
+  border-radius: 16px !important;
+}
+
+.google-maps-footer .maps-header {
+  background: linear-gradient(135deg, #2E8B57 0%, #28a745 100%) !important;
+}
+
+.google-maps-footer .stores-list {
+  max-height: 180px !important;
+}
+
+.google-maps-footer .store-item {
+  padding: 8px !important;
+  margin-bottom: 6px !important;
+}
+
+.google-maps-footer .store-name {
+  font-size: 0.8rem !important;
+}
+
+.google-maps-footer .store-address-short,
+.google-maps-footer .store-phone-short {
+  font-size: 0.7rem !important;
+}
+
+/* Sección de Blog y Promociones Mejorada */
+.blog-promo-mejorada {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-promo-mejorada::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%2328a745" fill-opacity="0.05"><circle cx="30" cy="30" r="4"/></g></svg>');
+    pointer-events: none;
+}
+
+.blog-promo-content {
+    position: relative;
+    z-index: 2;
+}
+
+.promo-badge {
+    animation: bounceIn 1s ease-out;
+}
+
+.blog-promo-title-new {
+    color: #2c3e50;
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    animation: slideInLeft 0.8s ease-out;
+}
+
+.blog-promo-subtitle-new {
+    color: #28a745;
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    animation: slideInLeft 0.8s ease-out 0.2s both;
+}
+
+.blog-promo-text-new {
+    color: #495057;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    animation: slideInLeft 0.8s ease-out 0.4s both;
+}
+
+/* Estadísticas */
+.blog-promo-stats {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: slideInUp 0.8s ease-out 0.6s both;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #28a745;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: #6c757d;
+    font-weight: 600;
+    margin-top: 0.25rem;
+}
+
+/* Botones de acción */
+.blog-promo-actions {
+    margin-bottom: 2rem;
+    animation: slideInUp 0.8s ease-out 0.8s both;
+}
+
+.blog-promo-btn-new {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    border: none;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    border-radius: 25px;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+    transition: all 0.3s ease;
+}
+
+.blog-promo-btn-new:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+}
+
+.ofertas-btn {
+    border: 2px solid #28a745;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.ofertas-btn:hover {
+    background: #28a745;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+}
+
+/* Noticias mejoradas */
+.blog-promo-news-new {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    border: 2px solid #f39c12;
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    animation: slideInUp 0.8s ease-out 1s both;
+}
+
+.news-badge {
+    background: #e67e22;
+    color: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.news-text {
+    color: #856404;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.news-emojis {
+    margin-left: 0.5rem;
+}
+
+/* Sección visual */
+.blog-promo-visual {
+    position: relative;
+    animation: slideInRight 0.8s ease-out 0.4s both;
+}
+
+.promo-image-container {
+    position: relative;
+    text-align: center;
+    padding: 2rem;
+}
+
+.blog-promo-logo-new {
+    max-width: 300px;
+    height: auto;
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.15));
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Badges flotantes */
+.floating-badges {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+.floating-badge {
+    position: absolute;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: floatingBadge 4s ease-in-out infinite;
+}
+
+.badge-1 {
+    top: 20%;
+    right: 10%;
+    animation-delay: 0s;
+}
+
+.badge-2 {
+    top: 60%;
+    left: 5%;
+    animation-delay: 1s;
+}
+
+.badge-3 {
+    bottom: 20%;
+    right: 20%;
+    animation-delay: 2s;
+}
+
+@keyframes floatingBadge {
+    0%, 100% { 
+        transform: translateY(0px) rotate(0deg);
+        opacity: 1;
+    }
+    50% { 
+        transform: translateY(-15px) rotate(5deg);
+        opacity: 0.8;
+    }
+}
+
+/* Animaciones de entrada */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .blog-promo-mejorada {
+        padding: 2rem 0;
+    }
+    
+    .blog-promo-title-new {
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    .blog-promo-subtitle-new {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+    
+    .blog-promo-text-new {
+        text-align: center;
+        font-size: 1rem;
+    }
+    
+    .blog-promo-actions {
+        text-align: center;
+    }
+    
+    .blog-promo-btn-new {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    .ofertas-btn {
+        width: 100%;
+    }
+    
+    .blog-promo-logo-new {
+        max-width: 200px;
+    }
+    
+    .blog-promo-news-new {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .floating-badge {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+    }
+}
+
+/*Navbar*/
+.navbar-nav{
+  margin: 0 auto;
+}
+#navbarNavAltMarkup .navbar-nav{
+  justify-content: center;
+  width: 100%;
+  display: flex;
+}
+.menu-centro {
+  flex: 1 1 0%;         /* El menú ocupa todo el espacio disponible */
+  display: flex;
+  justify-content: center; /* Centra los links horizontalmente */
+}
+.iconos-derecha {
+  display: flex;
+  align-items: center;
+}
+
+/* Responsive navbar styles */
+@media (max-width: 991.98px) {
+  /* En pantallas pequeñas, ajustar espaciado del navbar */
+  .logo-menu-capsule {
+    flex: 1;
+  }
+  
+  /* Asegurar que los iconos se mantengan visibles */
+  .iconos-derecha {
+    gap: 0.5rem;
+  }
+  
+  /* Ajustar el botón de menú */
+  .menu-btn {
+    padding: 0.25rem !important;
+  }
+  
+  /* Ajustar tamaño de iconos en móvil */
+  .iconos-derecha .nav-link i {
+    font-size: 1.8rem !important;
+  }
+}
+
+/* Estilos para el offcanvas del menú lateral 
+.barra-menu-offcanvas {
+  width: 300px !important;
+}
+
+.barra-menu-offcanvas .offcanvas-body {
+  padding: 0;
+}
+
+.barra-menu-offcanvas .offcanvas-body > div {
+  margin: 0 1rem;
+}*/
+
+/*Banner Principal*/
+body{
+  background-image: url(../images/principal/FondoHTML.png);
+}
+
+/* estilo-blog */
+.blog-promo-image-bg {
+  width: 100%;
+  min-height: 340px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  overflow: hidden;
+  /* Usa la imagen como fondo */
+  background: url('../images/principal/Descuento.jpg') right center no-repeat;
+  background-size: cover;
+}
+
+.blog-promo-content {
+  position: relative;
+  z-index: 2;
+  max-width: 560px;
+  margin-left: 48px;
+  padding: 36px 0;
+  color: #222;
+  text-align: left;
+  /* Opcional: fondo blanco semitransparente para mayor legibilidad */
+  /* background: rgba(255,255,255,0.92); */
+  /* border-radius: 12px; */
+}
+
+.blog-promo-logo {
+  width: 130px;
+  margin-bottom: 18px;
+}
+
+.blog-promo-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.blog-promo-subtitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.blog-promo-text {
+  font-size: 1.1rem;
+  margin-bottom: 1.4rem;
+}
+
+.blog-promo-btn {
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+  padding: 0.45rem 1.2rem;
+}
+
+.blog-promo-news {
+  font-size: 1rem;
+  margin-top: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .blog-promo-content {
+    margin-left: 18px;
+    max-width: 100%;
+    padding: 28px 0;
+  }
+}
+@media (max-width: 600px) {
+  .blog-promo-image-bg {
+    min-height: 520px;
+    flex-direction: column;
+    background-position: center;
+  }
+  .blog-promo-content {
+    margin: 0 auto;
+    padding: 20px 0;
+    text-align: center;
+  }
+}
+
+/*Estilo Carrusel - Optimizado*/
+.catalogo-container {
+  padding-left: 2vw;
+  padding-right: 2vw;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.carrusel-ancho{
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+/* Estilo mejorado para el carousel simple */
+.carousel-item img {
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.carousel-item img:hover {
+  transform: scale(1.02);
+}
+
+/* Mejorar la legibilidad del caption */
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  padding: 20px;
+  bottom: 30px;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 600px;
+}
+
+.carousel-caption h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.carousel-caption p {
+  font-size: 1.1rem;
+  margin-bottom: 0;
+  color: #f8f9fa;
+}
+
+/* Controles del carousel */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  opacity: 0.8;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+}
+
+/* Indicadores */
+.carousel-indicators {
+  bottom: 10px;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: #28a745;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+
+@media (max-width: 768px) {
+  .catalogo-container {
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+  
+  .carousel-caption {
+    bottom: 15px;
+    width: 90%;
+    padding: 15px;
+  }
+  
+  .carousel-caption h3 {
+    font-size: 1.4rem;
+  }
+  
+  .carousel-caption p {
+    font-size: 0.95rem;
+  }
+  
+  .carousel-item img {
+    border-radius: 10px;
+  }
+}
+
+/*Podio*/
+.podio-section {
+  margin: 2rem 0;
+  padding: 2rem 0;
+  border-radius: 32px;
+  box-shadow: 0 4px 24px rgba(60,80,220,0.08);
+}
+
+.podio-title {
+  font-weight: bold;
+  font-size: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.podio-trophy {
+  color: #FFD700;
+  font-size: 2.4rem;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.podio-col {
+  position: relative;
+  margin-bottom: 2rem;
+}
+.podio-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.10);
+  border-radius: 18px;
+  background: #fff;
+}
+.podio-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 8px 30px rgba(60,80,220,0.18);
+}
+.podio-img {
+  height: 240px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 18px 18px 0 0;
+  padding: 1rem;
+}
+
+/* Podio steps (escalones) */
+.podio-step {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 0 0 18px 18px;
+  z-index: 0;
+}
+.podio-step-gold {
+  background: #ffe082;
+  height: 70px;
+  width: 80%;
+  box-shadow: 0 2px 14px rgba(255,215,0,0.08);
+}
+.podio-step-silver {
+  background: #cfd8dc;
+  height: 50px;
+  width: 65%;
+}
+.podio-step-bronze {
+  background: #bcaaa4;
+  height: 50px;
+  width: 60%;
+}
+
+.podio-card-gold{
+  transform: translateY(-32px);
+}
+
+.podio-card-silver{
+  transform: translateY(8px);
+}
+
+.podio-card-bronze{
+  transform: translateY(16px);
+}
+
+/* Colores y tipos */
+.podio-title-gold {
+  color: #FFD700;
+  font-size: 1.33rem;
+  font-weight: 700;
+}
+.podio-title-silver {
+  color: #C0C0C0;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+.podio-title-bronze {
+  color: #CD7F32;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .podio-img {
+    height: 160px;
+  }
+  .podio-title {
+    font-size: 1.5rem;
+  }
+}
+
+/*Footer*/
+.footer-bg {
+  background-color: var(--bs-success) !important;
+  color: #ffffff;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="%23ffffff" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.footer-bg > * {
+  position: relative;
+  z-index: 2;
+}
+
+.footer-map {
+  height: 300px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px !important;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer-map:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+.footer-map iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  filter: brightness(0.9) contrast(1.1);
+}
+
+.social-btn {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+  border-radius: 12px !important;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.social-btn:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-btn.facebook:hover {
+  background: rgba(24, 119, 242, 0.2) !important;
+  border-color: #1877f2 !important;
+}
+
+.social-btn.instagram:hover {
+  background: rgba(225, 48, 108, 0.2) !important;
+  border-color: #e1306c !important;
+}
+
+.social-btn.whatsapp:hover {
+  background: rgba(37, 211, 102, 0.2) !important;
+  border-color: #25d366 !important;
+}
+
+.social-btn.twitter:hover {
+  background: rgba(29, 161, 242, 0.2) !important;
+  border-color: #1da1f2 !important;
+}
+
+.contact-info p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.contact-info p:hover {
+  color: #ffffff;
+}
+
+.contact-info i {
+  color: #a8d5a3 !important;
+  font-size: 1.1rem;
+}
+
+.stores-list small {
+  color: rgba(255, 255, 255, 0.8) !important;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.stores-list small:hover {
+  color: #a8d5a3 !important;
+  padding-left: 5px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7) !important;
+  transition: all 0.3s ease;
+  padding: 5px 10px;
+  border-radius: 6px;
+}
+
+.footer-links a:hover {
+  color: #a8d5a3 !important;
+  background: rgba(255, 255, 255, 0.1);
+  text-decoration: none !important;
+}
+
+.footer-eco {
+    background: linear-gradient(135deg, var(--verde-esmeralda) 80%, #37714b 100%) !important;
+    color: #fff !important;
+    font-family: 'Montserrat', Arial, sans-serif !important;
+    border-top-left-radius: 36px !important;
+    border-top-right-radius: 36px !important;
+    box-shadow: 0 -4px 24px rgba(60, 120, 40, 0.09) !important;
+    margin-top: 48px !important;
+}
+.footer-eco .eco-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--amarillo-mostaza);
+    letter-spacing: 1px;
+}
+.footer-eco .footer-list li {
+    margin-bottom: 0.35em;
+    font-size: 1rem;
+}
+.footer-eco .footer-list {
+    padding-left: 8px;
+}
+.footer-eco .footer-mapa {
+    border: 3px solid var(--amarillo-mostaza);
+    box-shadow: 0 2px 14px rgba(60, 120, 40, 0.10);
+    min-height: 400px;
+}
+
+.footer-eco .footer-mapa iframe {
+    min-height: 400px;
+}
+
+/* Separación entre columnas del footer */
+.footer-eco .col-lg-4 {
+    position: relative;
+}
+
+/* Línea divisoria vertical entre columnas en pantallas grandes */
+@media (min-width: 992px) {
+    .footer-eco .col-lg-4:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 10%;
+        right: 0;
+        width: 1px;
+        height: 80%;
+        background: rgba(255, 255, 255, 0.2);
+    }
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+}
+.footer-social .social-link {
+    color: var(--amarillo-mostaza);
+    background: #225528;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transition: .2s, color .2s, transform .2s;
+    box-shadow: 0 2px 8px rgba(60, 120, 40, 0.08);
+}
+.footer-social .social-link:hover {
+    background: var(--amarillo-mostaza);
+    color: var(--verde-esmeralda);
+    transform: scale(1.11) rotate(-4deg);
+    text-decoration: none;
+}
+.footer-logo {
+    filter: drop-shadow(0 2px 12px rgba(255, 255, 255, 0.12));
+    transition: transform .18s;
+}
+.footer-logo:hover {
+    transform: scale(1.07) rotate(-2deg);
+}
+.leaflet-container{
+  height: 400px !important;
+  width: 100% !important;
+  border-radius: 16px;
+}

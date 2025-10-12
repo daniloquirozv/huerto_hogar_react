@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import '../assets/styles/FormRegistro.css';
+import '../../assets/styles/FormRegistro.css';
 
 // Lista de regiones (constante local)
 // Se usa como fuente para el desplegable de regiones
