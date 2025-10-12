@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import '../../assets/styles/FormRegistro.css';
+import { addUser } from '../../data/user';
 
 // Lista de regiones (constante local)
 // Se usa como fuente para el desplegable de regiones
@@ -78,8 +79,14 @@ const FormRegistro = () => {
         setErrores(erroresValidados);
 
         if (Object.keys(erroresValidados).length === 0) {
-            console.log('Formulario enviado', formData);
-            // desde aca se pueden enviar los datos a mi backend
+            // Guardar usuario usando la utilidad addUser (persiste en localStorage)
+            const nombreCompleto = `${formData.nombre} ${formData.apellido}`.trim();
+            const newUser = addUser({ name: nombreCompleto, email: formData.correo, password: formData.password });
+            console.log('Usuario registrado:', newUser);
+            // reset del formulario y mostrar un mensaje sencillo
+            setFormData(initialState);
+            setErrores({});
+            alert('Registro exitoso. Ahora puedes iniciar sesión con tu correo y contraseña.');
         }
     };
 

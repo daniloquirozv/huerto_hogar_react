@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Modal, ListGroup } from "react-bootstrap";
+import { useNavigate } from 'react-router-dom';
 import LoginUser from './ui/Loging';
 
 
@@ -27,6 +28,7 @@ export default function LoginModal({ show, handleClose, user, onUserChange }) {
     };
 
     const isLoggedIn = !!currentUser;
+    const navigate = useNavigate();
 
     return (
         <Modal show={show} onHide={handleClose} centered>
@@ -51,7 +53,7 @@ export default function LoginModal({ show, handleClose, user, onUserChange }) {
                             <ListGroup.Item action>
                                 <i className="bi bi-question-circle me-2"></i> Ayuda
                             </ListGroup.Item>
-                            <ListGroup.Item action >
+                            <ListGroup.Item action onClick={() => { handleClose && handleClose(); navigate('/registro'); }}>
                                 <i className="bi bi-person-plus me-2"></i> Registrarse
                             </ListGroup.Item>
                         </>
