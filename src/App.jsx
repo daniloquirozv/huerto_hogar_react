@@ -47,7 +47,14 @@ function App() {
       <Routes>
         <Route 
           path='/producto' 
-          element={<ProductoPage onAddToCart={handleAddToCart} cartItems={cartItems} />} 
+          element={
+            <ProductoPage 
+              onAddToCart={handleAddToCart} 
+              cartItems={cartItems}
+              onUpdateQuantity={handleUpdateQuantity}
+              onRemoveItem={handleRemoveItem}
+            />
+          } 
         />
         <Route 
           path='/carrito' 
