@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { Container, Row, Col, Card, Button, Badge, Form, Modal, Alert } from 'react-bootstrap';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
-function CarritoMainComponent({ 
-    cartItems = [], 
-    onUpdateQuantity = () => {}, 
-    onRemoveItem = () => {}, 
-    onClearCart = () => {} 
+function CarritoMainComponent({
+    cartItems = [],
+    onUpdateQuantity = () => { },
+    onRemoveItem = () => { },
+    onClearCart = () => { }
 }) {
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [showModal, setShowModal] = useState(false);
@@ -91,8 +91,8 @@ function CarritoMainComponent({
                             </Card.Header>
                             <Card.Body className="p-0">
                                 {cartItems.map((item) => (
-                                    <div 
-                                        key={item.codigo} 
+                                    <div
+                                        key={item.codigo}
                                         className="border-bottom p-3"
                                         style={{ transition: 'background-color 0.2s' }}
                                         onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#f8f9fa'}
@@ -101,11 +101,11 @@ function CarritoMainComponent({
                                         <Row className="align-items-center">
                                             {/* Imagen del producto */}
                                             <Col xs={12} sm={3} className="text-center mb-3 mb-sm-0">
-                                                <img 
-                                                    src={item.imagen} 
+                                                <img
+                                                    src={item.imagen}
                                                     alt={item.nombre}
-                                                    style={{ 
-                                                        width: '100%', 
+                                                    style={{
+                                                        width: '100%',
                                                         maxWidth: '120px',
                                                         height: '120px',
                                                         objectFit: 'cover',
@@ -119,7 +119,7 @@ function CarritoMainComponent({
 
                                             {/* Información del producto */}
                                             <Col xs={12} sm={4}>
-                                                <h5 
+                                                <h5
                                                     style={{ color: '#2E8B57', cursor: 'pointer' }}
                                                     onClick={() => showProductDetails(item)}
                                                 >
@@ -132,9 +132,9 @@ function CarritoMainComponent({
                                                 <p className="mb-1 text-success">
                                                     <strong>${item.precio.toLocaleString('es-CL')}</strong> CLP/{item.unidad}
                                                 </p>
-                                                <Button 
-                                                    variant="link" 
-                                                    size="sm" 
+                                                <Button
+                                                    variant="link"
+                                                    size="sm"
                                                     className="p-0 text-info"
                                                     onClick={() => showProductDetails(item)}
                                                 >
@@ -146,8 +146,8 @@ function CarritoMainComponent({
                                             {/* Controles de cantidad */}
                                             <Col xs={12} sm={3} className="text-center my-3 my-sm-0">
                                                 <div className="d-flex align-items-center justify-content-center">
-                                                    <Button 
-                                                        variant="outline-danger" 
+                                                    <Button
+                                                        variant="outline-danger"
                                                         size="sm"
                                                         onClick={() => decrementQuantity(item)}
                                                         disabled={item.quantity <= 1}
@@ -163,8 +163,8 @@ function CarritoMainComponent({
                                                         className="mx-2 text-center"
                                                         style={{ width: '70px' }}
                                                     />
-                                                    <Button 
-                                                        variant="outline-success" 
+                                                    <Button
+                                                        variant="outline-success"
                                                         size="sm"
                                                         onClick={() => incrementQuantity(item)}
                                                         disabled={item.quantity >= item.stock}
@@ -182,8 +182,8 @@ function CarritoMainComponent({
                                                 <h5 className="text-success mb-3">
                                                     ${(item.precio * item.quantity).toLocaleString('es-CL')}
                                                 </h5>
-                                                <Button 
-                                                    variant="outline-danger" 
+                                                <Button
+                                                    variant="outline-danger"
                                                     size="sm"
                                                     onClick={() => onRemoveItem(item.codigo)}
                                                 >
@@ -199,7 +199,7 @@ function CarritoMainComponent({
 
                         {/* Botón para vaciar carrito */}
                         <div className="text-end" >
-                            <Button 
+                            <Button
                                 variant="outline-danger"
                                 onClick={onClearCart}
                                 style={{
@@ -260,17 +260,17 @@ function CarritoMainComponent({
                                     Envío gratis en compras superiores a $30.000
                                 </Alert>
 
-                                <Button 
-                                    variant="success" 
-                                    size="lg" 
+                                <Button
+                                    variant="success"
+                                    size="lg"
                                     className="w-100 mb-2"
                                 >
                                     <i className="bi bi-credit-card me-2"></i>
                                     Proceder al Pago
                                 </Button>
 
-                                <Button 
-                                    variant="outline-success" 
+                                <Button
+                                    variant="outline-success"
                                     className="w-100"
                                     href="/producto"
                                 >
@@ -296,10 +296,10 @@ function CarritoMainComponent({
                         <Modal.Body>
                             <Row>
                                 <Col md={5} className="text-center">
-                                    <img 
-                                        src={selectedProduct.imagen} 
+                                    <img
+                                        src={selectedProduct.imagen}
                                         alt={selectedProduct.nombre}
-                                        style={{ 
+                                        style={{
                                             width: '100%',
                                             maxWidth: '300px',
                                             height: '300px',
@@ -312,7 +312,7 @@ function CarritoMainComponent({
                                 <Col md={7}>
                                     <h3 style={{ color: '#2E8B57' }}>{selectedProduct.nombre}</h3>
                                     <Badge bg="secondary" className="mb-3">{selectedProduct.categoria}</Badge>
-                                    
+
                                     <div className="mb-3">
                                         <p><strong>Código:</strong> {selectedProduct.codigo}</p>
                                         <p><strong>Precio:</strong> <span className="text-success fs-5">${selectedProduct.precio.toLocaleString('es-CL')} CLP/{selectedProduct.unidad}</span></p>
@@ -335,8 +335,8 @@ function CarritoMainComponent({
                             <Button variant="secondary" onClick={handleCloseModal}>
                                 Cerrar
                             </Button>
-                            <Button 
-                                variant="danger" 
+                            <Button
+                                variant="danger"
                                 onClick={() => {
                                     onRemoveItem(selectedProduct.codigo);
                                     handleCloseModal();

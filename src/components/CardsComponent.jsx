@@ -74,7 +74,7 @@ function CardsComponent({ onAddToCart }) {
                                             />
                                             <span className="input-group-text">{producto.unidad}</span>
                                         </div>
-                                        <button 
+                                        <button
                                             className="btn btn-success btn-add-cart"
                                             onClick={() => handleAddToCart(producto)}
                                         >

@@ -11,7 +11,7 @@ export default function Header({ carritoItems = [], onRemoveFromCart, onUpdateQu
     const [showCart, setShowCart] = useState(false);
     const [showLogin, setShowLogin] = useState(false);
     const location = useLocation();
-    
+
     // Verificar si estamos en la página del carrito
     const isCarritoPage = location.pathname === '/carrito';
 
@@ -77,9 +77,9 @@ export default function Header({ carritoItems = [], onRemoveFromCart, onUpdateQu
                     </Nav>
                 </Container>
             </Navbar>
-            <CarritoMenu 
-                show={showCart} 
-                handleClose={() => setShowCart(false)} 
+            <CarritoMenu
+                show={showCart}
+                handleClose={() => setShowCart(false)}
                 carritoItems={carritoItems}
                 onRemoveFromCart={onRemoveFromCart}
                 onUpdateQuantity={onUpdateQuantity}

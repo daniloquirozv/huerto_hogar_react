@@ -6,8 +6,8 @@ import Header from '../components/Header'
 function CarritoPage({ cartItems, onUpdateQuantity, onRemoveItem, onClearCart }) {
   return (
     <>
-    <Header/>
-      <CarritoMainComponent 
+      <Header />
+      <CarritoMainComponent
         cartItems={cartItems}
         onUpdateQuantity={onUpdateQuantity}
         onRemoveItem={onRemoveItem}

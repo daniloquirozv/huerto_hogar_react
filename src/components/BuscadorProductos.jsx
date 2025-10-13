@@ -71,7 +71,7 @@ function BuscadorProductos({ onAddToCart }) {
                     <i className="bi bi-search me-2"></i>
                     Buscador de Productos
                 </h3>
-                
+
                 {/* Búsqueda por texto */}
                 <InputGroup size="lg" className="mb-3">
                     <InputGroup.Text style={{ backgroundColor: '#2E8B57', border: 'none' }}>

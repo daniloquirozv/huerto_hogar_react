@@ -14,7 +14,7 @@ function HeaderComponent() {
         e.preventDefault();
         const contactoElement = document.getElementById('Contacto');
         if (contactoElement) {
-            contactoElement.scrollIntoView({ 
+            contactoElement.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
             });
@@ -27,17 +27,20 @@ function HeaderComponent() {
                 <Navbar.Brand href="#home"><img src={logotipo} alt="Logotipo" title='Huerto Hogar' width={100} /></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto navbar-nav">                        
+                    <Nav className="me-auto navbar-nav">
                         <Nav.Link as={Link} to={'/producto'}>Inicio</Nav.Link>
                         <Nav.Link as={Link} to={'/producto'}>Productos</Nav.Link>
                         <Nav.Link as={Link} to={'/producto'}>Blog</Nav.Link>
                         <Nav.Link href='#Contacto' onClick={handleContactoClick}>Contacto</Nav.Link>
                         <Nav.Link as={Link} to={'/producto'}>Inicio Sesion</Nav.Link>
+                        <Nav.Link as={Link} to={'/admin'} className="text-warning fw-bold">
+                            <i className="bi bi-shield-check"></i> Admin
+                        </Nav.Link>
                     </Nav>
-                                       
+
                 </Navbar.Collapse>
             </Container>
-        </Navbar>        
+        </Navbar>
     );
 }
 export default HeaderComponent;

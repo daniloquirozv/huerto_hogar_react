@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import ProductoPage from './pages/ProductoPage';
 import CarritoPage from './pages/CarritoPage';
+import AdminPage from './pages/AdminPage';
 import { useState } from 'react';
 
 function App() {
@@ -66,6 +67,10 @@ function App() {
               onClearCart={handleClearCart}
             />
           } 
+        />
+        <Route 
+          path='/admin' 
+          element={<AdminPage />} 
         />
       </Routes>
      
