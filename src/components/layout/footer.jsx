@@ -1,5 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
-import '../../assets/style/principal-style.css';
+import '../../assets/style/principal-base-style.css';
+import '../../assets/style/principal-footer-style.css';
 import { useState } from "react";
 import { tiendas } from "../../data/tiendas";
 import GoogleMapsIntegration from "../ui/googleMapsIntegration";

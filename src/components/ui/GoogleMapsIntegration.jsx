@@ -1,6 +1,7 @@
 import React from 'react';
 import { tiendas } from '../../data/tiendas';
-import '../../assets/style/principal-style.css';
+import '../../assets/style/principal-base-style.css';
+import '../../assets/style/principal-maps-style.css';
 
 const GoogleMapsIntegration = ({ 
     selectedStore, 

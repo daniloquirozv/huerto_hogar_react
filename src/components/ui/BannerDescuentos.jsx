@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Alert, Button, Badge, Container, Row, Col } from 'react-bootstrap';
 import { promocionesActivas } from '../../data/blogPosts';
-import '../../assets/style/principal-style.css';
+import '../../assets/style/principal-base-style.css';
+import '../../assets/style/principal-banner-style.css';
 
 const BannerDescuentos = () => {
     const [promocionActual, setPromocionActual] = useState(0);

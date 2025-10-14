@@ -1,11 +1,12 @@
 import { Badge, Button, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import '../../assets/style/principal-style.css'
+import '../../assets/style/principal-base-style.css';
+import '../../assets/style/principal-blog-style.css';
 import fondo from '../../assets/images/principal/fondo3.avif';
 import logotipo from '../../assets/images/principal/LogoTipo.png';
 import Carrusel from "../ui/carrusel";
 import Podio from "../ui/podio";
-import BannerDescuentos from "../ui/bannerDescuentos";
+import BannerDescuentos from "../ui/BannerDescuentos";
 
 
 export default function Body() {
@@ -86,7 +87,7 @@ export default function Body() {
                                 <Row>
                                     <Col xs={4} className="text-center">
                                         <div className="stat-item">
-                                            <div className="stat-number">5</div>
+                                            <div className="stat-number">6</div>
                                             <div className="stat-label">Ofertas Activas</div>
                                         </div>
                                     </Col>

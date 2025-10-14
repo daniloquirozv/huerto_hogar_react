@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Carousel, Container, Row, Col } from "react-bootstrap";
 import { catalogo as productos } from "../../data/catalogo";
-import '../../assets/style/principal-style.css';
+import '../../assets/style/principal-base-style.css';
+import '../../assets/style/principal-carrusel-style.css';
 
 export default function Carrusel() {
   const [index, setIndex] = useState(0);
