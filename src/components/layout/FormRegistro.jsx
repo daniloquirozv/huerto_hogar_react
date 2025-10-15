@@ -94,7 +94,7 @@ const FormRegistro = () => {
         <div className="registro-frame registro-container">
             <div className="registro-title">Registro</div>
             <form onSubmit={handleSubmit} noValidate>
-                /* Nombre */
+        
                 <div className="mb-3">
                     <label htmlFor="nombre" className="form-label">Nombre</label>
                     <div className="input-with-overlay">
@@ -108,16 +108,13 @@ const FormRegistro = () => {
                             value={formData.nombre}
                             onChange={handleChange}
                         />
-                        /* Mensaje de error superpuesto dentro del input si el campo esta vacio */
                             {errores.nombre && !formData.nombre && (
                             <span className="input-error-overlay">{errores.nombre}</span>
                         )}
                     </div>
-                    /* Mensaje accesible debajo del input (role=alert) */
                     <div id="error-nombre" role="alert" className="invalid-feedback">{errores.nombre}</div>
                 </div>
 
-                /* Apellido */
                 <div className="mb-3">
                     <label htmlFor="apellido" className="form-label">Apellido</label>
                     <div className="input-with-overlay">
@@ -138,7 +135,6 @@ const FormRegistro = () => {
                     <div id="error-apellido" role="alert" className="invalid-feedback">{errores.apellido}</div>
                 </div>
 
-                /* Correo */
                 <div className="mb-3">
                     <label htmlFor="correo" className="form-label">Correo</label>
                     <div className="input-with-overlay">
@@ -158,7 +154,6 @@ const FormRegistro = () => {
                     </div>
                     <div id="error-correo" role="alert" className="invalid-feedback">{errores.correo}</div>
                 </div>
-                /* Región - desplega para elegirla */
                 <div className="mb-3">
                     <label htmlFor="region" className="form-label">Región</label>
                     <div className="input-group">
@@ -168,7 +163,6 @@ const FormRegistro = () => {
                             value={formData.region}
                             onChange={(val) => {
                                 setFormData(prev => ({ ...prev, region: val }));
-                                // clear error for region when user chooses
                                 setErrores(prev => ({ ...prev, region: undefined }));
                             }}
                             error={errores.region}
@@ -177,7 +171,6 @@ const FormRegistro = () => {
                     <div id="error-region" role="alert" className="invalid-feedback">{errores.region}</div>
                 </div>
 
-                /*contraseña*/
                 <div className="mb-3">
                     <label htmlFor="password" className="form-label">Contraseña</label>
                     <div className="input-with-overlay">
@@ -198,7 +191,6 @@ const FormRegistro = () => {
                     <div id="error-password" role="alert" className="invalid-feedback">{errores.password}</div>
                 </div>
 
-                /* Confirmar contraseña */
                 <div className="mb-3">
                     <label htmlFor="password2" className="form-label">Confirmar Contraseña</label>
                     <div className="input-with-overlay">
