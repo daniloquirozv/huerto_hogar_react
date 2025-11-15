@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import '../../assets/styles/FormRegistro.css';
-import { addUser } from '../../data/user';
+import axios from 'axios';
+
 
 // Lista de regiones (constante local)
 // Se usa como fuente para el desplegable de regiones
@@ -9,6 +10,7 @@ const Rregiones = [
     'Valparaíso', 'Región Metropolitana', "O'Higgins", 'Maule', 'Ñuble',
     'Biobío', 'Araucanía', 'Los Ríos', 'Los Lagos', 'Aysén', 'Magallanes'
 ];
+const API_BASE_URL ='http://localhost:8089/api/v1/usuario';
 
 // Estado inicial del formulario
 // Campos controlados por useState
@@ -73,20 +75,49 @@ const FormRegistro = () => {
 
     // Submit del formulario
     // Valida y setea errores; si no hay errores se puede enviar al backend
-    const handleSubmit = (e) => {
+  const handleSubmit = async (e)=> {
         e.preventDefault();
         const erroresValidados = ValidarFormularioRegistro(formData);
-        setErrores(erroresValidados);
+        setErrores(erroresValidados)
 
-        if (Object.keys(erroresValidados).length === 0) {
-            // Guardar usuario usando la utilidad addUser (persiste en localStorage)
-            const nombreCompleto = `${formData.nombre} ${formData.apellido}`.trim();
-            const newUser = addUser({ name: nombreCompleto, email: formData.correo, password: formData.password });
-            console.log('Usuario registrado:', newUser);
-            // reset del formulario y mostrar un mensaje sencillo
-            setFormData(initialState);
-            setErrores({});
-            alert('Registro exitoso. Ahora puedes iniciar sesión con tu correo y contraseña.');
+        if(Object.keys(erroresValidados).length===0){
+            try {
+                // prepara datos para enviar al backend
+                const usuarioData = {
+                    nombre: formData.nombre,
+                    apellido: formData.apellido,
+                    correo: formData.correo,
+                    region: formData.region,
+                    contrasena: formData.password,
+                    fecha_registro: new Date().toISOString().split('T')[0],
+                    estado: true,
+                    rol: {id_rol :2}
+                };
+                // envia los datos al back
+                const response = await axios.post(`${API_BASE_URL}/guardar`,usuarioData);
+
+                console.log('usuario registrado en el back;',response.data);
+
+                // reset el formulario
+                setFormData(initialState);
+                setErrores({});
+                alert('Registro exitoso usuario guardado en el back');
+
+                
+            } catch (error){
+                
+                console.error('Error al registar el usuario: ',error);
+
+                // mostrar el mensaje de error especifico
+                if(error.response){
+                    // el servidor responde con un codigo de error
+                    alert(`Error al registrar: ${error.response.data.message || 'Error del servidor'}`);
+                } else if (error.request){
+                    alert('No se pudo conectar con el servidor. verificar que el backen este corriendo en http://localhost:8089')
+                } else {
+                    alert('Error al procesar el registro')
+                }
+            } 
         }
     };
 
@@ -94,7 +125,7 @@ const FormRegistro = () => {
         <div className="registro-frame registro-container">
             <div className="registro-title">Registro</div>
             <form onSubmit={handleSubmit} noValidate>
-        
+                {/* Nombre */}
                 <div className="mb-3">
                     <label htmlFor="nombre" className="form-label">Nombre</label>
                     <div className="input-with-overlay">
@@ -108,13 +139,16 @@ const FormRegistro = () => {
                             value={formData.nombre}
                             onChange={handleChange}
                         />
+                        {/* Mensaje de error superpuesto dentro del input si el campo esta vacio */}
                             {errores.nombre && !formData.nombre && (
                             <span className="input-error-overlay">{errores.nombre}</span>
                         )}
                     </div>
+                    {/* Mensaje accesible debajo del input (role=alert) */}
                     <div id="error-nombre" role="alert" className="invalid-feedback">{errores.nombre}</div>
                 </div>
 
+                {/* Apellido */}
                 <div className="mb-3">
                     <label htmlFor="apellido" className="form-label">Apellido</label>
                     <div className="input-with-overlay">
@@ -135,6 +169,7 @@ const FormRegistro = () => {
                     <div id="error-apellido" role="alert" className="invalid-feedback">{errores.apellido}</div>
                 </div>
 
+                {/* Correo */}
                 <div className="mb-3">
                     <label htmlFor="correo" className="form-label">Correo</label>
                     <div className="input-with-overlay">
@@ -154,6 +189,7 @@ const FormRegistro = () => {
                     </div>
                     <div id="error-correo" role="alert" className="invalid-feedback">{errores.correo}</div>
                 </div>
+                {/* Región - desplega para elegirla */}
                 <div className="mb-3">
                     <label htmlFor="region" className="form-label">Región</label>
                     <div className="input-group">
@@ -163,6 +199,7 @@ const FormRegistro = () => {
                             value={formData.region}
                             onChange={(val) => {
                                 setFormData(prev => ({ ...prev, region: val }));
+                                // clear error for region when user chooses
                                 setErrores(prev => ({ ...prev, region: undefined }));
                             }}
                             error={errores.region}
@@ -171,6 +208,7 @@ const FormRegistro = () => {
                     <div id="error-region" role="alert" className="invalid-feedback">{errores.region}</div>
                 </div>
 
+                {/*contraseña*/}
                 <div className="mb-3">
                     <label htmlFor="password" className="form-label">Contraseña</label>
                     <div className="input-with-overlay">
@@ -191,6 +229,7 @@ const FormRegistro = () => {
                     <div id="error-password" role="alert" className="invalid-feedback">{errores.password}</div>
                 </div>
 
+                {/* Confirmar contraseña */}
                 <div className="mb-3">
                     <label htmlFor="password2" className="form-label">Confirmar Contraseña</label>
                     <div className="input-with-overlay">
